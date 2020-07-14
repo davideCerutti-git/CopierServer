@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane prefHeight="550.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewServerController">
    <top>
@@ -43,7 +44,10 @@
                         <Image url="@../resources/desktopComputerIcon96.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="labelNameServer" text="SFIX" />
+                  <Label fx:id="labelNameServer" text="SFIX">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
                   <Label fx:id="labelAddressServer" text="192.168.2.1" />
                   <Button fx:id="buttonSeeFiles" mnemonicParsing="false" text="See files" />
                   <Button fx:id="buttonSync" mnemonicParsing="false" text="Sync" />

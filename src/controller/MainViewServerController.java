@@ -5,7 +5,9 @@
 package controller;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -55,37 +57,32 @@ public class MainViewServerController implements Initializable {
 	@FXML // fx:id="listViewClients"
 	private ListView<Client> listViewClients; // Value injected by FXMLLoader
 
-	private ObservableList<Client> clientObservableList;
-	private ContextMenu cMenu;
-
-	public MainViewServerController() {
-		clientObservableList = FXCollections.observableArrayList();
-		//clientObservableList.addAll(new Client("Client01", "192.168.0.1"), new Client("Client02", "192.168.0.2"));
-	}
 
 	@FXML // This method is called by the FXMLLoader when initialization is complete
 	void initialize() {
 		assert buttonSync != null : "fx:id=\"buttonSync\" was not injected: check your FXML file 'MainViewServer.fxml'.";
 		assert labelStatus != null : "fx:id=\"labelStatus\" was not injected: check your FXML file 'MainViewServer.fxml'.";
 		assert listViewClients != null : "fx:id=\"listViewClients\" was not injected: check your FXML file 'MainViewServer.fxml'.";
-		
 	}
 
 	public void setModel(ModelServer modelServer) {
 		model = modelServer;
+		listViewClients.setItems(model.getClientObservableList());
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		listViewClients.setItems(clientObservableList);
 		listViewClients.setCellFactory(listViewClients -> new ListViewCellsClientController(model));
-//		labelNameServer.setText(model.getSettings().getProperty("copierServerName"));
-//		labelAddressServer.setText(model.getSettings().getProperty("copierServerIpAddress"));
+		try {
+			labelNameServer.setText(InetAddress.getLocalHost().getHostName());
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
 	}
 
-	public ObservableList<Client> getClientObservableList() {
-		return clientObservableList;
-	}
+//	public ObservableList<Client> getClientObservableList() {
+//		return model.getClientObservableList();
+//	}
 
 	@FXML
 	void closeProgram(ActionEvent event) throws InterruptedException {

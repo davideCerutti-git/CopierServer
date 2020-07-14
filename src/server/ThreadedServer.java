@@ -19,15 +19,18 @@ public class ThreadedServer extends Thread {
 	private int i=1;
 	public static final Logger log = Logger.getLogger(ModelServer.class.getName());
 	private MainViewServerController mvsController;
+	
+	private ModelServer model;
 
 	public MainViewServerController getMvsController() {
 		return mvsController;
 	}
 
-	public ThreadedServer(int _port, MainViewServerController _mvsController) {
+	public ThreadedServer(ModelServer _model, int _port, MainViewServerController _mvsController) {
 		serversList = new ArrayList<ServerThread>();
 		port=_port;
 		mvsController=_mvsController;
+		model=_model;
 	}
 
 	@Override
@@ -55,7 +58,7 @@ public class ThreadedServer extends Thread {
 			prefixClient="Client";
 			else
 				prefixClient="Client0";
-			mvsController.getClientObservableList().add(new Client(prefixClient+i,socket.getInetAddress().toString()));
+			model.getClientObservableList().add(new Client(prefixClient+i,socket.getInetAddress().toString()));
 			
 			server.start();
 			i++;

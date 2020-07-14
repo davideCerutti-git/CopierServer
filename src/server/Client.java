@@ -7,6 +7,7 @@ public class Client {
 	private String clientStatus;
 	private String clientAddress;
 	private int clientStatusInteger;
+	private enum statusClient{STATUS0, STATUS1};
 
 	public Client() {
 		this(null, null);

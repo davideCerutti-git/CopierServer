@@ -8,6 +8,9 @@ import java.awt.TrayIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 import javax.imageio.ImageIO;
 import controller.MainViewServerController;
 import javafx.application.Application;
@@ -67,8 +70,7 @@ public class Main extends Application {
 		tray.add(trayIcon);
 	}
 
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) throws UnknownHostException {
 		launch(args);
 		tray.remove(trayIcon);
 	}
