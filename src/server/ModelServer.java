@@ -8,17 +8,17 @@ import settings.Settings;
 
 public class ModelServer {
 	private Settings settings;
+	
+
 	private static int serverPort;
 	private long commiterSleepTime;
 	private static String pathServeriFix, pathLocalCommit;
 	private ThreadedServer ts;
-	private CommiterThread ct;
 	private MainViewServerController mvsController;
 	
 	public ModelServer(MainViewServerController _mvsController) {
 		readSettings();
 		ts=new ThreadedServer(serverPort,_mvsController);
-		//ct=new CommiterThread(pathServeriFix, pathLocalCommit,commiterSleepTime);
 		ts.start();
 	}
 	
@@ -48,5 +48,9 @@ public class ModelServer {
 
 	public MainViewServerController getMvsController() {
 		return mvsController;
+	}
+	
+	public Settings getSettings() {
+		return settings;
 	}
 }

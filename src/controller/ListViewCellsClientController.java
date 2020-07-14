@@ -41,6 +41,7 @@ public class ListViewCellsClientController extends ListCell<Client> {
 
 	@FXML // fx:id="mainPane"
 	private AnchorPane mainPane; // Value injected by FXMLLoader
+	
 
 	private FXMLLoader mLLoader;
 	private ContextMenu cMenu;
@@ -57,7 +58,17 @@ public class ListViewCellsClientController extends ListCell<Client> {
 
 	public ListViewCellsClientController(ModelServer _model) {
 		this.model = _model;
-		cMenu = new ContextMenu();
+		cMenu = makeContextMenuClient();
+		this.setContextMenu(cMenu);
+		loadFXML();
+		index++;
+	}
+
+	/**
+	 * 
+	 */
+	private ContextMenu makeContextMenuClient() {
+		ContextMenu contextMenu=new ContextMenu();
 		MenuItem menuItem1 = new MenuItem("File list");
 		menuItem1.setGraphic(new ImageView(new Image(getClass().getResourceAsStream("/treeStructureIcon16.png"))));
 		MenuItem menuItem2 = new MenuItem("Connect");
@@ -89,10 +100,8 @@ public class ListViewCellsClientController extends ListCell<Client> {
 			}
 
 		});
-		cMenu.getItems().addAll(menuItem1, menuItem2, menuItem3, menuItem4);
-		this.setContextMenu(cMenu);
-		loadFXML();
-		index++;
+		contextMenu.getItems().addAll(menuItem1, menuItem2, menuItem3, menuItem4);
+		return contextMenu;
 	}
 
 	private void loadFXML() {

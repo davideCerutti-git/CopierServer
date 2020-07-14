@@ -28,7 +28,6 @@ public class Main extends Application {
 
 		try {
 			makeSystemTray();
-			
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainViewServer.fxml"));
 			Parent root = loader.load();
 			MainViewServerController mainController = (MainViewServerController) loader.getController();

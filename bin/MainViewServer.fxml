@@ -7,6 +7,8 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -34,8 +36,16 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <HBox alignment="CENTER_LEFT">
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
                <children>
+                  <ImageView fx:id="imageViewServer" fitHeight="34.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/desktopComputerIcon96.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelNameServer" text="SFIX" />
+                  <Label fx:id="labelAddressServer" text="192.168.2.1" />
+                  <Button fx:id="buttonSeeFiles" mnemonicParsing="false" text="See files" />
                   <Button fx:id="buttonSync" mnemonicParsing="false" text="Sync" />
                </children>
                <padding>
