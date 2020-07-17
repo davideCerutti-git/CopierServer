@@ -8,16 +8,20 @@ public class Client {
 	private String clientAddress;
 	private int clientStatusInteger;
 	private enum statusClient{STATUS0, STATUS1};
+	ServerThread sTh;
+
+	
 
 	public Client() {
-		this(null, null);
+		this(null, null,null);
 	}
 
-	public Client(String name, String address) {
+	public Client(String name, String address, ServerThread server) {
 		clientName = name;
 		clientAddress = address;
 		clientStatus = "none";
 		clientStatusInteger = 0;
+		sTh=server;
 	}
 
 	public String getClientName() {
@@ -51,6 +55,9 @@ public class Client {
 	public void setClientStatusInteger(int clientStatusInteger) {
 		this.clientStatusInteger = clientStatusInteger;
 	}
-
+	
+	public ServerThread getsTh() {
+		return sTh;
+	}
 
 }

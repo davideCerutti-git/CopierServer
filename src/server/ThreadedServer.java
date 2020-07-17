@@ -1,8 +1,10 @@
 package server;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
+import java.net.SocketException;
+
 import org.apache.log4j.Logger;
 
 import controller.MainViewServerController;
@@ -11,7 +13,6 @@ import controller.MainViewServerController;
 public class ThreadedServer extends Thread {
 	
 	private static int port;
-	private ArrayList<ServerThread> serversList = null;
 	static boolean runningThreadedServer = true;
 	private ServerSocket serverSocket = null;
 	private Socket socket = null;
@@ -27,7 +28,6 @@ public class ThreadedServer extends Thread {
 	}
 
 	public ThreadedServer(ModelServer _model, int _port, MainViewServerController _mvsController) {
-		serversList = new ArrayList<ServerThread>();
 		port=_port;
 		mvsController=_mvsController;
 		model=_model;
@@ -49,28 +49,31 @@ public class ThreadedServer extends Thread {
 			}
 			// new thread for a client
 			serverName="Client_"+i;
-			ServerThread server = new ServerThread(socket, serverName, log);
+			ServerThread server;
+			try {
+				server = new ServerThread(socket, serverName, log);
+			
 			log.debug("Client_"+i+" connected");
-			serversList.add(server);
 			//update observable list in the controller
 			String prefixClient="";
 			if(i>9)
-			prefixClient="Client";
+				prefixClient="Client";
 			else
 				prefixClient="Client0";
-			model.getClientObservableList().add(new Client(prefixClient+i,socket.getInetAddress().toString()));
-			
+			model.getClientObservableList().add(new Client(prefixClient+i,socket.getInetAddress().toString(), server));
 			server.start();
+			} catch (SocketException e) {
+				log.error(e);
+			}
 			i++;
 		}
 	}
 
 	public void close() throws InterruptedException {
-		for(ServerThread s: serversList) {
-			s.join(1); 
-		}
+//		for(ServerThread s: serversList) {
+//			s.join(1); 
+//		}
 		runningThreadedServer=false;
-		
 	}
 
 }

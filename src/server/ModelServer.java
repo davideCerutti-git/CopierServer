@@ -1,8 +1,7 @@
 package server;
+
 import java.io.FileReader;
 import java.io.IOException;
-
-
 import controller.MainViewServerController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,8 +9,6 @@ import settings.Settings;
 
 public class ModelServer {
 	private Settings settings;
-	
-
 	private static int serverPort;
 	private long commiterSleepTime;
 	private static String pathServeriFix, pathLocalCommit;
@@ -22,7 +19,7 @@ public class ModelServer {
 	public ModelServer(MainViewServerController _mvsController) {
 		readSettings();
 		clientObservableList = FXCollections.observableArrayList();
-		clientObservableList.addAll(new Client("Client01", "192.168.0.1"), new Client("Client02", "192.168.0.2"));
+		clientObservableList.addAll(new Client("Client01", "192.168.0.1",null), new Client("Client02", "192.168.0.2",null));
 		ts=new ThreadedServer(this,serverPort,_mvsController);
 		ts.start();
 	}
@@ -48,7 +45,6 @@ public class ModelServer {
 	public void close() throws InterruptedException {
 		ts.close();
 		ts.join(100);
-		
 	}
 
 	public MainViewServerController getMvsController() {
@@ -62,6 +58,5 @@ public class ModelServer {
 	public ObservableList<Client> getClientObservableList() {
 		return clientObservableList;
 	}
-	
 	
 }

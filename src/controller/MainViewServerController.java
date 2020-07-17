@@ -4,28 +4,19 @@
 
 package controller;
 
-import java.io.IOException;
 import java.net.InetAddress;
 import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.ResourceBundle;
 
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.MenuItem;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 import server.Client;
 import server.ModelServer;
 
@@ -57,7 +48,6 @@ public class MainViewServerController implements Initializable {
 	@FXML // fx:id="listViewClients"
 	private ListView<Client> listViewClients; // Value injected by FXMLLoader
 
-
 	@FXML // This method is called by the FXMLLoader when initialization is complete
 	void initialize() {
 		assert buttonSync != null : "fx:id=\"buttonSync\" was not injected: check your FXML file 'MainViewServer.fxml'.";
@@ -78,15 +68,18 @@ public class MainViewServerController implements Initializable {
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}
-	}
 
-//	public ObservableList<Client> getClientObservableList() {
-//		return model.getClientObservableList();
-//	}
+		buttonSync.setOnAction((event) -> {
+			for( Client c: model.getClientObservableList()) {
+				c.getsTh().getCommandsQueue().add("print time");
+			}
+		});
+	}
 
 	@FXML
 	void closeProgram(ActionEvent event) throws InterruptedException {
 		model.close();
 		// System.exit(0);
 	}
+
 }
