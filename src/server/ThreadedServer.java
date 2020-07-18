@@ -4,76 +4,52 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
-
 import org.apache.log4j.Logger;
 
-import controller.MainViewServerController;
-
-
 public class ThreadedServer extends Thread {
-	
-	private static int port;
+
 	static boolean runningThreadedServer = true;
 	private ServerSocket serverSocket = null;
-	private Socket socket = null;
-	private String serverName;
-	private int i=1;
-	public static final Logger log = Logger.getLogger(ModelServer.class.getName());
-	private MainViewServerController mvsController;
-	
+	private ServerThread serverThread;
+	private Socket s = null;
+	private int i = 1;
+	private Logger log;
 	private ModelServer model;
 
-	public MainViewServerController getMvsController() {
-		return mvsController;
-	}
-
-	public ThreadedServer(ModelServer _model, int _port, MainViewServerController _mvsController) {
-		port=_port;
-		mvsController=_mvsController;
-		model=_model;
+	public ThreadedServer(ModelServer _model, int _port, Logger _log) throws IOException {
+		serverSocket = new ServerSocket(_port);
+		model = _model;
+		log=_log;
 	}
 
 	@Override
 	public void run() {
 		log.debug("ThreadedServer started, waiting for clients...");
-		try {
-			serverSocket = new ServerSocket(port);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+
 		while (runningThreadedServer) {
 			try {
-				socket = serverSocket.accept();
+				s = serverSocket.accept();
 			} catch (IOException e) {
-				System.out.println("I/O error: " + e);
-			}
-			// new thread for a client
-			serverName="Client_"+i;
-			ServerThread server;
-			try {
-				server = new ServerThread(socket, serverName, log);
-			
-			log.debug("Client_"+i+" connected");
-			//update observable list in the controller
-			String prefixClient="";
-			if(i>9)
-				prefixClient="Client";
-			else
-				prefixClient="Client0";
-			model.getClientObservableList().add(new Client(prefixClient+i,socket.getInetAddress().toString(), server));
-			server.start();
-			} catch (SocketException e) {
 				log.error(e);
 			}
-			i++;
+			// new thread for a client
+			try {
+				serverThread = new ServerThread(s, log);
+				log.debug("Client connected");
+				// update observable list in the model
+				model.getClientObservableList().add(new Client(s.getInetAddress().toString(), serverThread));
+				serverThread.start();
+			} catch (SocketException e) {
+				log.error(e);
+			} catch (IOException e) {
+				log.error(e);
+			}
 		}
+
 	}
 
-	public void close() throws InterruptedException {
-//		for(ServerThread s: serversList) {
-//			s.join(1); 
-//		}
-		runningThreadedServer=false;
+	public void close() {
+		runningThreadedServer = false;
 	}
 
 }

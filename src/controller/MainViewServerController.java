@@ -9,6 +9,7 @@ import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.ResourceBundle;
 
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -69,17 +70,13 @@ public class MainViewServerController implements Initializable {
 			e.printStackTrace();
 		}
 
-		buttonSync.setOnAction((event) -> {
-			for( Client c: model.getClientObservableList()) {
-				c.getsTh().getCommandsQueue().add("print time");
-			}
-		});
+//		buttonSync.setOnAction((event) -> {
+//			for( Client c: model.getClientObservableList()) {
+//				c.getsTh().getCommandsQueue().add("get name");
+//			}
+//		});
 	}
 
-	@FXML
-	void closeProgram(ActionEvent event) throws InterruptedException {
-		model.close();
-		// System.exit(0);
-	}
+
 
 }

@@ -46,6 +46,7 @@ public class ListViewCellsClientController extends ListCell<Client> {
 	private ContextMenu cMenu;
 	private ModelServer model;
 	private static int index;
+	private Client client;
 
 	@FXML // This method is called by the FXMLLoader when initialization is complete
 	void initialize() {
@@ -76,6 +77,10 @@ public class ListViewCellsClientController extends ListCell<Client> {
 		menuItem4.setGraphic(new ImageView(new Image(getClass().getResourceAsStream("/updateIcon16.png"))));
 		menuItem3.setOnAction((event) -> {
 			lableNameClient.setText(" Disconnected");
+		});
+		
+		menuItem4.setOnAction((event) -> {
+			client.getsTh().getCommandsQueue().add("get name");
 		});
 		menuItem2.setOnAction((event) -> {
 			lableNameClient.setText(" Connected");
@@ -114,15 +119,16 @@ public class ListViewCellsClientController extends ListCell<Client> {
 	}
 
 	@Override
-	protected void updateItem(Client client, boolean empty) {
-		super.updateItem(client, empty);
+	protected void updateItem(Client _client, boolean empty) {
+		super.updateItem(_client, empty);
 
 		if (empty) {
 			setText(null);
 			setGraphic(null);
 		} else {
-			lableNameClient.setText(client.getClientName());
-			labelAddressClient.setText(client.getClientAddress());
+			client=_client;
+			lableNameClient.setText(_client.getClientName());
+			labelAddressClient.setText(_client.getClientAddress());
 			setGraphic(mainPane);
 		}
 	}

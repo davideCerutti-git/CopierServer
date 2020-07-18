@@ -2,25 +2,28 @@ package server;
 
 import java.io.FileReader;
 import java.io.IOException;
+
+import org.apache.log4j.Logger;
+
 import controller.MainViewServerController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import settings.Settings;
 
 public class ModelServer {
-	private Settings settings;
+	private static Settings settings;
 	private static int serverPort;
 	private long commiterSleepTime;
 	private static String pathServeriFix, pathLocalCommit;
-	private ThreadedServer ts;
+	private static ThreadedServer ts;
 	private MainViewServerController mvsController;
-	private ObservableList<Client> clientObservableList;
+	private ObservableList<Client> clientsObservableList;
+	public static final Logger log = Logger.getLogger(ModelServer.class.getName());
 	
-	public ModelServer(MainViewServerController _mvsController) {
+	public ModelServer(MainViewServerController _mvsController) throws IOException {
 		readSettings();
-		clientObservableList = FXCollections.observableArrayList();
-		clientObservableList.addAll(new Client("Client01", "192.168.0.1",null), new Client("Client02", "192.168.0.2",null));
-		ts=new ThreadedServer(this,serverPort,_mvsController);
+		clientsObservableList = FXCollections.observableArrayList();
+		ts=new ThreadedServer(this,serverPort,log);
 		ts.start();
 	}
 	
@@ -29,7 +32,7 @@ public class ModelServer {
 		try {
 			settings.load(new FileReader("properties/settings.cfg"));
 		} catch (IOException e) {
-			//log.error(e);
+			log.error(e);
 		}
 		serverPort = Integer.parseInt(settings.getProperty("copierServerPort"));
 		pathServeriFix=settings.getProperty("pathServeriFix");
@@ -42,9 +45,11 @@ public class ModelServer {
 
 	}
 
-	public void close() throws InterruptedException {
+	public void close() {
+		for(Client c: clientsObservableList) {
+			c.getsTh().close();
+		}
 		ts.close();
-		ts.join(100);
 	}
 
 	public MainViewServerController getMvsController() {
@@ -56,7 +61,7 @@ public class ModelServer {
 	}
 
 	public ObservableList<Client> getClientObservableList() {
-		return clientObservableList;
+		return clientsObservableList;
 	}
 	
 }

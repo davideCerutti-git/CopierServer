@@ -8,16 +8,16 @@ public class Client {
 	private String clientAddress;
 	private int clientStatusInteger;
 	private enum statusClient{STATUS0, STATUS1};
-	ServerThread sTh;
+	private ServerThread sTh;
 
 	
 
 	public Client() {
-		this(null, null,null);
+		this(null,null);
 	}
 
-	public Client(String name, String address, ServerThread server) {
-		clientName = name;
+	public Client(String address, ServerThread server) {
+		clientName = null;
 		clientAddress = address;
 		clientStatus = "none";
 		clientStatusInteger = 0;
