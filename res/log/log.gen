@@ -3,3 +3,254 @@
 [DEBUG] 2020-07-18 18:42:41,467 printed: get name
 [DEBUG] 2020-07-18 18:42:41,467 waiting response
 [DEBUG] 2020-07-18 18:42:41,473 Response: KEY118
+[DEBUG] 2020-07-18 19:15:58,472 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-18 19:16:03,664 Client connected
+[DEBUG] 2020-07-18 19:16:03,666 Client connected
+[DEBUG] 2020-07-18 19:16:21,443 printed: get name
+[DEBUG] 2020-07-18 19:16:21,454 waiting response
+[DEBUG] 2020-07-18 19:16:21,454 Response: KEY118
+[DEBUG] 2020-07-18 19:16:28,836 printed: get name
+[DEBUG] 2020-07-18 19:16:28,836 waiting response
+[DEBUG] 2020-07-19 09:27:44,837 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 09:28:48,405 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 09:28:48,611 Client connected
+[DEBUG] 2020-07-19 09:28:53,344 printed: get name
+[DEBUG] 2020-07-19 09:28:53,344 waiting response
+[DEBUG] 2020-07-19 09:28:53,350 Response: KEY118
+[DEBUG] 2020-07-19 09:29:22,655 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 09:29:22,962 Client connected
+[DEBUG] 2020-07-19 09:29:33,696 printed: get name
+[DEBUG] 2020-07-19 09:29:33,696 waiting response
+[DEBUG] 2020-07-19 09:29:33,702 Response: KEY118
+[DEBUG] 2020-07-19 09:31:01,679 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 09:31:01,829 Client connected
+[DEBUG] 2020-07-19 09:35:03,746 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 09:35:04,199 Client connected
+[DEBUG] 2020-07-19 09:36:49,220 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 09:36:49,628 Client connected
+[DEBUG] 2020-07-19 09:36:53,329 printed: get name
+[DEBUG] 2020-07-19 09:36:53,329 waiting response
+[DEBUG] 2020-07-19 09:36:53,335 Response: KEY118
+[DEBUG] 2020-07-19 09:38:03,711 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 09:38:07,270 Client connected
+[DEBUG] 2020-07-19 09:39:59,293 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 09:40:08,540 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 09:40:08,598 Client connected
+[DEBUG] 2020-07-19 10:03:17,276 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 10:03:23,026 Client connected
+[DEBUG] 2020-07-19 10:05:02,967 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 10:05:03,150 Client connected
+[DEBUG] 2020-07-19 10:06:13,649 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 10:06:13,954 Client connected
+[DEBUG] 2020-07-19 10:07:01,618 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 10:07:01,870 Client connected
+[DEBUG] 2020-07-19 10:08:11,561 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 10:08:11,939 Client connected
+[DEBUG] 2020-07-19 10:08:11,940 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:12,443 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:12,944 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:13,445 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:13,945 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:14,446 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:14,946 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:15,447 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:15,947 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:16,448 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:16,949 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:17,449 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:17,950 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:18,451 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:18,951 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:19,452 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:19,953 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:20,453 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:20,954 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:21,455 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:21,955 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:22,456 tring to connect to sClent
+[DEBUG] 2020-07-19 10:08:22,957 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:21,706 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 10:14:21,808 Client connected
+[DEBUG] 2020-07-19 10:14:21,808 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:22,311 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:22,812 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:23,313 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:23,813 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:24,314 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:24,815 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:25,315 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:25,816 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:26,317 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:26,817 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:27,318 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:27,819 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:28,320 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:28,820 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:29,321 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:29,822 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:30,322 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:30,823 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:31,323 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:31,824 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:32,325 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:32,825 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:33,326 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:33,827 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:34,327 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:34,828 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:35,329 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:35,829 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:36,330 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:36,831 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:37,331 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:37,832 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:38,333 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:38,833 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:39,334 tring to connect to sClent
+[DEBUG] 2020-07-19 10:14:39,835 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:20,043 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 10:16:20,047 Client connected
+[DEBUG] 2020-07-19 10:16:20,047 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:20,550 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:21,051 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:21,552 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:22,052 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:22,553 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:23,054 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:23,554 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:24,055 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:24,556 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:25,056 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:25,557 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:26,058 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:26,558 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:27,059 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:27,560 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:28,060 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:28,561 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:29,062 tring to connect to sClent
+[DEBUG] 2020-07-19 10:16:29,562 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:19,883 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 10:18:20,190 Client connected
+[DEBUG] 2020-07-19 10:18:20,190 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:20,695 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:21,195 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:21,696 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:22,197 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:22,697 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:23,198 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:23,699 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:24,199 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:24,700 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:25,201 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:25,701 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:26,202 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:26,703 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:27,203 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:27,704 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:28,205 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:28,705 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:29,206 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:29,707 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:30,207 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:30,708 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:31,209 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:31,709 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:32,209 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:32,710 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:33,211 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:33,712 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:34,212 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:34,713 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:35,213 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:35,714 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:36,215 tring to connect to sClent
+[DEBUG] 2020-07-19 10:18:36,715 tring to connect to sClent
+[DEBUG] 2020-07-19 10:19:20,581 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 10:19:20,793 Client connected
+[DEBUG] 2020-07-19 10:20:48,860 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 10:20:49,968 Client connected
+[DEBUG] 2020-07-19 10:21:03,032 printed: get name
+[DEBUG] 2020-07-19 10:21:03,032 waiting response
+[DEBUG] 2020-07-19 10:21:03,038 Response: KEY118
+[DEBUG] 2020-07-19 10:21:26,701 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 10:21:26,756 Client connected
+[DEBUG] 2020-07-19 18:32:36,288 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 18:32:43,075 Client connected
+[DEBUG] 2020-07-19 18:34:15,437 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 18:34:15,560 Client connected
+[DEBUG] 2020-07-19 18:34:15,560 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:16,065 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:16,566 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:17,066 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:17,567 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:18,068 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:18,568 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:19,069 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:19,570 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:20,070 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:20,571 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:21,072 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:21,572 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:22,073 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:22,574 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:23,074 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:23,575 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:24,076 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:24,576 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:25,077 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:25,578 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:26,078 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:26,579 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:27,080 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:27,580 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:34:28,081 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:35:03,764 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 18:35:08,032 Client connected
+[DEBUG] 2020-07-19 18:35:08,033 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:35:08,035 connected to sClent
+[DEBUG] 2020-07-19 18:35:46,754 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 18:35:49,343 Client connected
+[DEBUG] 2020-07-19 18:35:49,343 tring to connect to sClent /192.168.2.4
+[DEBUG] 2020-07-19 18:35:49,345 connected to sClent
+[DEBUG] 2020-07-19 18:36:03,723 received: in standby
+[DEBUG] 2020-07-19 18:36:07,448 received: not in standby
+[DEBUG] 2020-07-19 18:38:26,894 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 18:38:35,337 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 18:38:37,699 Client connected
+[DEBUG] 2020-07-19 18:38:37,699 tring to connect to sClent 192.168.2.4
+[DEBUG] 2020-07-19 18:38:37,702 connected to sClent
+[DEBUG] 2020-07-19 18:38:50,548 received: in standby
+[DEBUG] 2020-07-19 18:38:54,496 received: not in standby
+[DEBUG] 2020-07-19 18:42:12,083 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 18:42:14,955 Client connected
+[DEBUG] 2020-07-19 18:42:14,956 tring to connect to sClent 192.168.2.4
+[DEBUG] 2020-07-19 18:42:14,958 connected to sClent
+[DEBUG] 2020-07-19 18:42:20,485 received: in standby
+[DEBUG] 2020-07-19 18:42:23,145 received: not in standby
+[DEBUG] 2020-07-19 18:58:09,779 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 18:58:26,454 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 18:58:28,724 Client connected
+[DEBUG] 2020-07-19 18:58:28,724 tring to connect to sClent 192.168.2.4
+[DEBUG] 2020-07-19 18:58:28,726 connected to sClent
+[DEBUG] 2020-07-19 18:58:35,007 Lost connection to: 192.168.2.4
+[DEBUG] 2020-07-19 18:58:35,007 tring to connect to sClent 192.168.2.4
+[DEBUG] 2020-07-19 18:58:37,510 tring to connect to sClent 192.168.2.4
+[DEBUG] 2020-07-19 18:58:40,015 tring to connect to sClent 192.168.2.4
+[DEBUG] 2020-07-19 18:58:42,518 tring to connect to sClent 192.168.2.4
+[DEBUG] 2020-07-19 18:58:45,030 tring to connect to sClent 192.168.2.4
+[DEBUG] 2020-07-19 19:00:13,125 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 19:00:15,940 Client connected
+[DEBUG] 2020-07-19 19:00:15,941 tring to connect to sClent 192.168.2.4
+[DEBUG] 2020-07-19 19:00:15,943 connected to sClent
+[DEBUG] 2020-07-19 19:00:19,678 Lost connection to: 192.168.2.4
+[DEBUG] 2020-07-19 19:00:19,679 EchoClient: closing...
+[DEBUG] 2020-07-19 19:00:30,341 Client connected
+[DEBUG] 2020-07-19 19:00:30,341 tring to connect to sClent 192.168.2.4
+[DEBUG] 2020-07-19 19:00:30,842 connected to sClent
+[DEBUG] 2020-07-19 19:00:57,594 ThreadedServer started, waiting for clients...
+[DEBUG] 2020-07-19 19:00:57,740 Client connected
+[DEBUG] 2020-07-19 19:00:57,740 tring to connect to sClent 192.168.2.4
+[DEBUG] 2020-07-19 19:00:57,743 connected to sClent
+[DEBUG] 2020-07-19 19:01:05,031 Lost connection to: 192.168.2.4
+[DEBUG] 2020-07-19 19:01:05,031 EchoClient: closing...

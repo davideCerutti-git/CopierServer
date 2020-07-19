@@ -8,7 +8,7 @@ public class Client {
 	private String clientAddress;
 	private int clientStatusInteger;
 	private enum statusClient{STATUS0, STATUS1};
-	private ServerThread sTh;
+	private ServerThreadTo sTh;
 
 	
 
@@ -16,7 +16,7 @@ public class Client {
 		this(null,null);
 	}
 
-	public Client(String address, ServerThread server) {
+	public Client(String address, ServerThreadTo server) {
 		clientName = null;
 		clientAddress = address;
 		clientStatus = "none";
@@ -56,7 +56,7 @@ public class Client {
 		this.clientStatusInteger = clientStatusInteger;
 	}
 	
-	public ServerThread getsTh() {
+	public ServerThreadTo getsTh() {
 		return sTh;
 	}
 

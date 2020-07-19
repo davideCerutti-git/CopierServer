@@ -10,16 +10,17 @@ public class ThreadedServer extends Thread {
 
 	static boolean runningThreadedServer = true;
 	private ServerSocket serverSocket = null;
-	private ServerThread serverThread;
+	private ServerThreadTo serverThreadTo;
 	private Socket s = null;
-	private int i = 1;
+	private int i = 1, portServerFrom;
 	private Logger log;
 	private ModelServer model;
 
-	public ThreadedServer(ModelServer _model, int _port, Logger _log) throws IOException {
+	public ThreadedServer(ModelServer _model, int _port, int _portServerFrom, Logger _log ) throws IOException {
 		serverSocket = new ServerSocket(_port);
 		model = _model;
 		log=_log;
+		this.portServerFrom=_portServerFrom;
 	}
 
 	@Override
@@ -34,11 +35,13 @@ public class ThreadedServer extends Thread {
 			}
 			// new thread for a client
 			try {
-				serverThread = new ServerThread(s, log);
+				
+				Client c=new Client(s.getInetAddress().toString(), serverThreadTo);
+				serverThreadTo = new ServerThreadTo(s, log, model, portServerFrom, c);
 				log.debug("Client connected");
 				// update observable list in the model
-				model.getClientObservableList().add(new Client(s.getInetAddress().toString(), serverThread));
-				serverThread.start();
+				model.getClientObservableList().add(c);
+				serverThreadTo.start();
 			} catch (SocketException e) {
 				log.error(e);
 			} catch (IOException e) {

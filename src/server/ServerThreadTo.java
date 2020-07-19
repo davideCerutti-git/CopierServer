@@ -17,47 +17,50 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 import org.apache.log4j.Logger;
 
-public class ServerThread extends Thread {
-	protected Socket socketSender;
-	private BufferedReader inSender = null;
-	private PrintWriter outSender = null;
-	protected Socket socketReceiver;
-	private BufferedReader inReceiver = null;
-	private PrintWriter outReceiver = null;
+public class ServerThreadTo extends Thread {
+	protected Socket sTo;
+	private BufferedReader in = null;
+	private PrintWriter out = null;
 	private String inLine, outLine;
 	private boolean runningServerThread = true;
 	private String serverName;
 	private Logger log;
 	private BlockingQueue<String> commandsQueue;
+	private ServerThreadFrom sFrom;
+	private ModelServer m;
+	private Client c;
 
-	public ServerThread(Socket s, Logger log) throws IOException {
+	public ServerThreadTo(Socket _s, Logger log, ModelServer _m, int portServerFrom, Client _c) throws IOException {
 		this.commandsQueue = new LinkedBlockingQueue<>();
-		this.socketReceiver = s;
+		this.c = _c;
+		this.m = _m;
+		this.sTo = _s;
 		this.serverName = null;
 		this.log = log;
-		inReceiver = new BufferedReader(new InputStreamReader(socketReceiver.getInputStream()));
-		outSender = new PrintWriter(socketReceiver.getOutputStream(),true);
+		this.in = new BufferedReader(new InputStreamReader(sTo.getInputStream()));
+		this.out = new PrintWriter(sTo.getOutputStream(), true);
+		this.sFrom = new ServerThreadFrom(sTo, m, log, portServerFrom,c);
+		this.sFrom.start();
 	}
 
 	public void run() {
 		try {
-			
-
 			while (runningServerThread) {
 				// WRITE commands to Client
-				outLine=commandsQueue.poll();
+				outLine = commandsQueue.poll();
 				if (outLine != null) {
-					outSender.write(outLine+"\n");
-					outSender.flush();
+					out.write(outLine + "\n");
+					out.flush();
 					log.debug("printed: " + outLine);
 					outLine = null;
 					// Read response from Client
 					log.debug("waiting response");
-					log.debug("Response: "+inReceiver.readLine());
+					log.debug("Response: " + in.readLine());
 				}
 			}
 		} catch (IOException e) {
 			log.error(e);
+			runningServerThread = false;
 		}
 	}
 
