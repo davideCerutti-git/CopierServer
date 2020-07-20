@@ -1,5 +1,10 @@
 package server;
 
+import java.util.Queue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+
+import master.MasterServerNode;
 
 public class Client {
 
@@ -7,13 +12,15 @@ public class Client {
 	private String clientStatus;
 	private String clientAddress;
 	private int clientStatusInteger;
-	private ServerThreadTo sTh;
+	private MasterServerNode sTh;
+	private BlockingQueue<String> commandsQueue;
 
 	public Client() {
 		this(null,null);
 	}
 
-	public Client(String address, ServerThreadTo server) {
+	public Client(String address, MasterServerNode server) {
+		this.commandsQueue = new LinkedBlockingQueue<>();
 		clientName = null;
 		clientAddress = address;
 		clientStatus = "none";
@@ -53,8 +60,11 @@ public class Client {
 		this.clientStatusInteger = clientStatusInteger;
 	}
 	
-	public ServerThreadTo getsTh() {
+	public MasterServerNode getsTh() {
 		return sTh;
+	}
+	public Queue<String> getCommandsQueue() {
+		return commandsQueue;
 	}
 
 }

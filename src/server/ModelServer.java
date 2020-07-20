@@ -9,12 +9,13 @@ import commands.*;
 import controller.MainViewServerController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import master.MasterNode;
 import settings.Settings;
 
 public class ModelServer {
 	private static Settings settings;
 	private static int serverPort, portServerFrom;
-	private static ThreadedServer ts;
+	private static MasterNode ts;
 	private MainViewServerController mvsController;
 	private ObservableList<Client> clientsObservableList;
 	public static final Logger log = Logger.getLogger(ModelServer.class.getName());
@@ -24,7 +25,7 @@ public class ModelServer {
 		readSettings();
 		setUpCommands();
 		clientsObservableList = FXCollections.observableArrayList();
-		ts=new ThreadedServer(this,serverPort, portServerFrom,log);
+		ts=new MasterNode(this,serverPort, portServerFrom,log);
 		ts.start();
 	}
 

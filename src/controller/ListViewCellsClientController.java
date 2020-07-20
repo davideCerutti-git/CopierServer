@@ -25,7 +25,9 @@ public class ListViewCellsClientController extends ListCell<Client> {
 
 	private FXMLLoader mLLoader;
 	private ContextMenu cMenu;
-	private Client client;
+	static private int count=0;
+	private int index=0;
+	private ModelServer model;
 	
 	@FXML // ResourceBundle that was given to the FXMLLoader
 	private ResourceBundle resources;
@@ -54,6 +56,9 @@ public class ListViewCellsClientController extends ListCell<Client> {
 	}
 
 	public ListViewCellsClientController(ModelServer _model) {
+		this.model=_model;
+		this.index=ListViewCellsClientController.count-1;
+		ListViewCellsClientController.count++;
 		cMenu = makeContextMenuClient();
 		this.setContextMenu(cMenu);
 		loadFXML();
@@ -72,10 +77,8 @@ public class ListViewCellsClientController extends ListCell<Client> {
 		});
 		
 		menuItem4.setOnAction((event) -> {
-			if (client.getsTh() ==null)
-				System.out.println("th null");
-			else
-			client.getsTh().getCommandsQueue().add("get name");
+			System.out.println(index);
+			model.getClientObservableList().get(index).getCommandsQueue().add("get name");
 		});
 		menuItem2.setOnAction((event) -> {
 			lableNameClient.setText(" Connected");
@@ -120,7 +123,6 @@ public class ListViewCellsClientController extends ListCell<Client> {
 			setText(null);
 			setGraphic(null);
 		} else {
-			client=_client;
 			lableNameClient.setText(_client.getClientName());
 			labelAddressClient.setText(_client.getClientAddress());
 			setGraphic(mainPane);
