@@ -1,10 +1,5 @@
 package commands;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-
-import controller.MainViewServerController;
-
 public class ClientNotInStandByCommand implements Command {
 
 	@Override

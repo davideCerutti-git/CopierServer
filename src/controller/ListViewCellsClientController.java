@@ -23,6 +23,10 @@ import server.ModelServer;
 
 public class ListViewCellsClientController extends ListCell<Client> {
 
+	private FXMLLoader mLLoader;
+	private ContextMenu cMenu;
+	private Client client;
+	
 	@FXML // ResourceBundle that was given to the FXMLLoader
 	private ResourceBundle resources;
 
@@ -40,13 +44,6 @@ public class ListViewCellsClientController extends ListCell<Client> {
 
 	@FXML // fx:id="mainPane"
 	private AnchorPane mainPane; // Value injected by FXMLLoader
-	
-
-	private FXMLLoader mLLoader;
-	private ContextMenu cMenu;
-	private ModelServer model;
-	private static int index;
-	private Client client;
 
 	@FXML // This method is called by the FXMLLoader when initialization is complete
 	void initialize() {
@@ -57,16 +54,11 @@ public class ListViewCellsClientController extends ListCell<Client> {
 	}
 
 	public ListViewCellsClientController(ModelServer _model) {
-		this.model = _model;
 		cMenu = makeContextMenuClient();
 		this.setContextMenu(cMenu);
 		loadFXML();
-		index++;
 	}
 
-	/**
-	 * 
-	 */
 	private ContextMenu makeContextMenuClient() {
 		ContextMenu contextMenu=new ContextMenu();
 		MenuItem menuItem1 = new MenuItem("File list");
@@ -80,6 +72,9 @@ public class ListViewCellsClientController extends ListCell<Client> {
 		});
 		
 		menuItem4.setOnAction((event) -> {
+			if (client.getsTh() ==null)
+				System.out.println("th null");
+			else
 			client.getsTh().getCommandsQueue().add("get name");
 		});
 		menuItem2.setOnAction((event) -> {
@@ -121,7 +116,6 @@ public class ListViewCellsClientController extends ListCell<Client> {
 	@Override
 	protected void updateItem(Client _client, boolean empty) {
 		super.updateItem(_client, empty);
-
 		if (empty) {
 			setText(null);
 			setGraphic(null);

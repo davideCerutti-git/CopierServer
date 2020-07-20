@@ -8,39 +8,34 @@ import org.apache.log4j.Logger;
 
 public class ThreadedServer extends Thread {
 
-	static boolean runningThreadedServer = true;
+	static boolean runningThread = true;
 	private ServerSocket serverSocket = null;
 	private ServerThreadTo serverThreadTo;
 	private Socket s = null;
-	private int i = 1, portServerFrom;
+	private int portServerFrom;
 	private Logger log;
-	private ModelServer model;
+	static private ModelServer model;
 
-	public ThreadedServer(ModelServer _model, int _port, int _portServerFrom, Logger _log ) throws IOException {
-		serverSocket = new ServerSocket(_port);
-		model = _model;
-		log=_log;
-		this.portServerFrom=_portServerFrom;
+	public ThreadedServer(ModelServer _model, int _port, int _portServerFrom, Logger _log) throws IOException {
+		this.serverSocket = new ServerSocket(_port);
+		ThreadedServer.model = _model;
+		this.log = _log;
+		this.portServerFrom = _portServerFrom;
 	}
 
 	@Override
 	public void run() {
-		log.debug("ThreadedServer started, waiting for clients...");
+		log.info("ThreadedServer started, waiting for clients...");
 
-		while (runningThreadedServer) {
+		while (runningThread) {
 			try {
 				s = serverSocket.accept();
-			} catch (IOException e) {
-				log.error(e);
-			}
-			// new thread for a client
-			try {
-				
-				Client c=new Client(s.getInetAddress().toString(), serverThreadTo);
-				serverThreadTo = new ServerThreadTo(s, log, model, portServerFrom, c);
-				log.debug("Client connected");
+
+				serverThreadTo = new ServerThreadTo(s, log, model, portServerFrom);
+				Client client = new Client(s.getInetAddress().toString(), serverThreadTo);
+				log.info("Client connected");
 				// update observable list in the model
-				model.getClientObservableList().add(c);
+				model.getClientObservableList().add(client);
 				serverThreadTo.start();
 			} catch (SocketException e) {
 				log.error(e);
@@ -48,11 +43,10 @@ public class ThreadedServer extends Thread {
 				log.error(e);
 			}
 		}
-
 	}
 
 	public void close() {
-		runningThreadedServer = false;
+		runningThread = false;
 	}
 
 }

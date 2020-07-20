@@ -254,3 +254,28 @@
 [DEBUG] 2020-07-19 19:00:57,743 connected to sClent
 [DEBUG] 2020-07-19 19:01:05,031 Lost connection to: 192.168.2.4
 [DEBUG] 2020-07-19 19:01:05,031 EchoClient: closing...
+[ INFO] 2020-07-19 20:42:36,221 ThreadedServer started, waiting for clients...
+[ INFO] 2020-07-19 20:42:36,407 Client connected
+[ INFO] 2020-07-19 20:42:36,407 tring to connect to sClent 192.168.2.4
+[ INFO] 2020-07-19 20:42:36,410 connected to sClient
+[ INFO] 2020-07-19 20:43:02,089 received: in standby
+[ INFO] 2020-07-19 20:43:03,837 received: not in standby
+[ INFO] 2020-07-19 20:45:20,519 received: in standby
+[ INFO] 2020-07-19 20:45:24,117 received: not in standby
+[ INFO] 2020-07-19 20:46:52,546 ThreadedServer started, waiting for clients...
+[ INFO] 2020-07-19 20:46:52,956 Client connected
+[ INFO] 2020-07-19 20:46:52,956 tring to connect to sClent 192.168.2.4
+[ INFO] 2020-07-19 20:46:52,959 connected to sClient
+[ INFO] 2020-07-19 20:47:31,232 ThreadedServer started, waiting for clients...
+[ INFO] 2020-07-19 20:47:31,674 Client connected
+[ INFO] 2020-07-19 20:47:31,674 tring to connect to sClent 192.168.2.4
+[ INFO] 2020-07-19 20:47:31,677 connected to sClient
+[ INFO] 2020-07-19 20:50:57,756 ThreadedServer started, waiting for clients...
+[ INFO] 2020-07-19 20:51:00,888 tring to connect to sClent 192.168.2.4
+[ INFO] 2020-07-19 20:51:00,888 Client connected
+[ INFO] 2020-07-19 20:51:00,890 connected to sClient
+[ INFO] 2020-07-19 20:51:04,917 printed: get name
+[ INFO] 2020-07-19 20:51:04,917 waiting response
+[ INFO] 2020-07-19 20:51:04,923 Response: KEY118
+[ INFO] 2020-07-19 20:51:13,456 received: in standby
+[ INFO] 2020-07-19 20:51:17,621 received: not in standby

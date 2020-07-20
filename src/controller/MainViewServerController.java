@@ -8,10 +8,6 @@ import java.net.InetAddress;
 import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.ResourceBundle;
-
-import javafx.application.Platform;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -56,11 +52,6 @@ public class MainViewServerController implements Initializable {
 		assert listViewClients != null : "fx:id=\"listViewClients\" was not injected: check your FXML file 'MainViewServer.fxml'.";
 	}
 
-	public void setModel(ModelServer modelServer) {
-		model = modelServer;
-		listViewClients.setItems(model.getClientObservableList());
-	}
-
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		listViewClients.setCellFactory(listViewClients -> new ListViewCellsClientController(model));
@@ -69,12 +60,11 @@ public class MainViewServerController implements Initializable {
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}
-
-//		buttonSync.setOnAction((event) -> {
-//			for( Client c: model.getClientObservableList()) {
-//				c.getsTh().getCommandsQueue().add("get name");
-//			}
-//		});
+	}
+	
+	public void setModel(ModelServer modelServer) {
+		model = modelServer;
+		listViewClients.setItems(model.getClientObservableList());
 	}
 
 

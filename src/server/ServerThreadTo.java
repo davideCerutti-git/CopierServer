@@ -1,16 +1,10 @@
 package server;
 
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.net.SocketException;
-import java.net.SocketTimeoutException;
-import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -18,54 +12,50 @@ import java.util.concurrent.LinkedBlockingQueue;
 import org.apache.log4j.Logger;
 
 public class ServerThreadTo extends Thread {
-	protected Socket sTo;
+	protected Socket socketTo;
 	private BufferedReader in = null;
 	private PrintWriter out = null;
-	private String inLine, outLine;
-	private boolean runningServerThread = true;
-	private String serverName;
+	private String outLine;
+	static private boolean runningThread = true;
 	private Logger log;
 	private BlockingQueue<String> commandsQueue;
 	private ServerThreadFrom sFrom;
-	private ModelServer m;
-	private Client c;
+	private ModelServer model;
 
-	public ServerThreadTo(Socket _s, Logger log, ModelServer _m, int portServerFrom, Client _c) throws IOException {
+	public ServerThreadTo(Socket _socket, Logger log, ModelServer _model, int portServerFrom) throws IOException {
 		this.commandsQueue = new LinkedBlockingQueue<>();
-		this.c = _c;
-		this.m = _m;
-		this.sTo = _s;
-		this.serverName = null;
+		this.model = _model;
+		this.socketTo = _socket;
 		this.log = log;
-		this.in = new BufferedReader(new InputStreamReader(sTo.getInputStream()));
-		this.out = new PrintWriter(sTo.getOutputStream(), true);
-		this.sFrom = new ServerThreadFrom(sTo, m, log, portServerFrom,c);
+		this.in = new BufferedReader(new InputStreamReader(socketTo.getInputStream()));
+		this.out = new PrintWriter(socketTo.getOutputStream(), true);
+		this.sFrom = new ServerThreadFrom(socketTo, model, log, portServerFrom);
 		this.sFrom.start();
 	}
 
 	public void run() {
 		try {
-			while (runningServerThread) {
+			while (runningThread) {
 				// WRITE commands to Client
 				outLine = commandsQueue.poll();
 				if (outLine != null) {
 					out.write(outLine + "\n");
 					out.flush();
-					log.debug("printed: " + outLine);
-					outLine = null;
+					log.info("printed: " + outLine);
 					// Read response from Client
-					log.debug("waiting response");
-					log.debug("Response: " + in.readLine());
+					log.info("waiting response");
+					log.info("Response: " + in.readLine());
+					outLine = null;
 				}
 			}
 		} catch (IOException e) {
 			log.error(e);
-			runningServerThread = false;
+			runningThread = false;
 		}
 	}
 
 	public void close() {
-		runningServerThread = false;
+		runningThread = false;
 	}
 
 	public Queue<String> getCommandsQueue() {

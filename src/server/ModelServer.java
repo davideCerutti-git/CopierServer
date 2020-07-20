@@ -14,8 +14,6 @@ import settings.Settings;
 public class ModelServer {
 	private static Settings settings;
 	private static int serverPort, portServerFrom;
-	private long commiterSleepTime;
-	private static String pathServeriFix, pathLocalCommit;
 	private static ThreadedServer ts;
 	private MainViewServerController mvsController;
 	private ObservableList<Client> clientsObservableList;
@@ -24,12 +22,16 @@ public class ModelServer {
 	
 	public ModelServer(MainViewServerController _mvsController) throws IOException {
 		readSettings();
-		commandRegister= new CommandRegister();
-		commandRegister.register("in standby", new ClientInStandByCommand());
-		commandRegister.register("not in standby", new ClientNotInStandByCommand());
+		setUpCommands();
 		clientsObservableList = FXCollections.observableArrayList();
 		ts=new ThreadedServer(this,serverPort, portServerFrom,log);
 		ts.start();
+	}
+
+	private void setUpCommands() {
+		commandRegister= new CommandRegister();
+		commandRegister.register("in standby", new ClientInStandByCommand());
+		commandRegister.register("not in standby", new ClientNotInStandByCommand());
 	}
 	
 	private void readSettings() {
@@ -41,9 +43,6 @@ public class ModelServer {
 		}
 		serverPort = Integer.parseInt(settings.getProperty("copierServerPort"));
 		portServerFrom = Integer.parseInt(settings.getProperty("portServerFrom"));
-		pathServeriFix=settings.getProperty("pathServeriFix");
-		pathLocalCommit=settings.getProperty("pathLocalCommit");
-		commiterSleepTime=(long)Integer.parseInt(settings.getProperty("commiterSleepTime"));
 	}
 	
 	public void setController(MainViewServerController mainController) {
@@ -71,7 +70,6 @@ public class ModelServer {
 	}
 
 	public CommandRegister getCommandRegister() {
-		// TODO Auto-generated method stub
 		return commandRegister;
 	}
 	

@@ -24,12 +24,10 @@ public class FileListViewController implements Initializable {
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
         assert treeViewFiles != null : "fx:id=\"treeViewFiles\" was not injected: check your FXML file 'FileListView.fxml'.";
-
     }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-		
 	}
 }

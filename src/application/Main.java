@@ -8,9 +8,7 @@ import java.awt.TrayIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.net.InetAddress;
 import java.net.UnknownHostException;
-
 import javax.imageio.ImageIO;
 import controller.MainViewServerController;
 import javafx.application.Application;
@@ -31,7 +29,6 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-
 		try {
 			makeSystemTray();
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainViewServer.fxml"));
@@ -46,18 +43,17 @@ public class Main extends Application {
 			primaryStage.getIcons().add(icon);
 			primaryStage.setScene(scene);
 			primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-			    @Override
-			    public void handle(WindowEvent t) {
-			    	modelServer.close();
-			        Platform.exit();
-			        System.exit(0);
-			    }
+				@Override
+				public void handle(WindowEvent t) {
+					modelServer.close();
+					Platform.exit();
+					System.exit(0);
+				}
 			});
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 	/**
