@@ -81,7 +81,9 @@ public class ListViewCellsClientController extends ListCell<Client> {
 			model.getClientObservableList().get(index).getCommandsQueue().add("get name");
 		});
 		menuItem2.setOnAction((event) -> {
-			lableNameClient.setText(" Connected");
+			model.getClientObservableList().get(0).setClientName("pippo");
+			updateItem(model.getClientObservableList().get(0),false);
+//			lableNameClient.setText(" Connected");
 		});
 		menuItem1.setOnAction((event) -> {
 			Stage stage = new Stage();

@@ -9,6 +9,7 @@ import java.net.UnknownHostException;
 import org.apache.log4j.Logger;
 
 import commands.Command;
+import server.Client;
 import server.ModelServer;
 
 public class MasterClientNode extends Thread {
@@ -21,12 +22,14 @@ public class MasterClientNode extends Thread {
 	private ModelServer model;
 	private String addressClientNode;
 	private int portClientNode;
+	Client client;
 
-	public MasterClientNode(Socket _socketServerNode, ModelServer _model, Logger _logger, int _portClientNode) throws IOException {
+	public MasterClientNode(Socket _socketServerNode, ModelServer _model, Logger _logger, int _portClientNode, Client _client) throws IOException {
 		this.addressClientNode = _socketServerNode.getInetAddress().toString().split("/")[1];
 		this.model = _model;
 		this.logger = _logger;
 		this.portClientNode = _portClientNode;
+		this.client=_client;
 	}
 
 	public void run() {
@@ -55,9 +58,10 @@ public class MasterClientNode extends Thread {
 				while (true) {
 					strLine = inStream.readLine();
 					logger.info("received: " + strLine);
-					Command c = model.getCommandRegister().getCommandByName(strLine);
-					outStream.write(c.execute() + "\n");
+					Command cmd = client.getCommandRegister().getCommandByName(strLine);
+					outStream.write(cmd.execute() + "\n");
 					outStream.flush();
+					
 				}
 			} catch (UnknownHostException e) {
 				logger.error("Don’t know about host " + addressClientNode);
@@ -76,6 +80,11 @@ public class MasterClientNode extends Thread {
 		} catch (IOException e) {
 			logger.error(e);
 		}
+	}
+
+	public void setClient(Client _client) {
+		this.client=_client;
+		
 	}
 
 }

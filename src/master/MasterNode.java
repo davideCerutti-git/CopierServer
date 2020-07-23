@@ -33,10 +33,10 @@ public class MasterNode extends Thread {
 		while (runningThread) {
 			try {
 				socketServerNode = serverNodeSocket.accept();
-
-				serverNode = new MasterServerNode(socketServerNode, logger, model, portClientNode);
-				Client client = new Client(socketServerNode.getInetAddress().toString(), serverNode);
-				serverNode.setClient(client);
+				Client client = new Client(socketServerNode.getInetAddress().toString(), serverNode,model);
+				serverNode = new MasterServerNode(socketServerNode, logger, model, portClientNode,client);
+//				
+//				serverNode.setClient(client);
 				logger.info("Slave connected");
 				// update observable list in the model
 				model.getClientObservableList().add(client);

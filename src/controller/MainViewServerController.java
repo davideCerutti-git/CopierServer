@@ -45,6 +45,8 @@ public class MainViewServerController implements Initializable {
 	@FXML // fx:id="listViewClients"
 	private ListView<Client> listViewClients; // Value injected by FXMLLoader
 	
+	
+
 	static private int indexClient=0;
 
 	@FXML // This method is called by the FXMLLoader when initialization is complete
@@ -68,7 +70,11 @@ public class MainViewServerController implements Initializable {
 		model = modelServer;
 		listViewClients.setItems(model.getClientObservableList());
 	}
-
-
+	
+	public ListView<Client> getListViewClients() {
+		return listViewClients;
+	}
+	
+	
 
 }

@@ -25,14 +25,15 @@ public class MasterServerNode extends Thread {
 	private ModelServer model;
 	private Client client;
 
-	public MasterServerNode(Socket _socket, Logger _log, ModelServer _model, int _portClientNode) throws IOException {
+	public MasterServerNode(Socket _socket, Logger _log, ModelServer _model, int _portClientNode, Client _client) throws IOException {
 		
 		this.model = _model;
 		this.socketServerNode = _socket;
 		this.logger = _log;
 		this.inStream = new BufferedReader(new InputStreamReader(socketServerNode.getInputStream()));
 		this.outStream = new PrintWriter(socketServerNode.getOutputStream(), true);
-		this.clientNode = new MasterClientNode(socketServerNode, model, logger, _portClientNode);
+		this.clientNode = new MasterClientNode(socketServerNode, model, logger, _portClientNode,_client);
+		this.client=_client;
 		this.clientNode.start();
 	}
 
