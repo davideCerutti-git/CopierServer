@@ -11,8 +11,9 @@ public class ClientInStandByCommand implements Command {
 	}
 
 	@Override
-	public String execute() {
-		client.setClientName("Client in standby");
+	public String execute(String args) {
+//		client.setClientName("Client in standby");
+		client.setInStandby(true);
 		client.getModel().getMvsController().getListViewClients().refresh();
 		return "";
 	}

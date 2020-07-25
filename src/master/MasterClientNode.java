@@ -17,22 +17,26 @@ public class MasterClientNode extends Thread {
 	private BufferedReader inStream = null;
 	private PrintWriter outStream = null;
 	private Logger logger;
-	static private boolean runningThread = true, connectedToServer = false;
+	private boolean runningThread = true, connectedToServer = false;
 	private String strLine;
 	private ModelServer model;
 	private String addressClientNode;
 	private int portClientNode;
 	Client client;
 
-	public MasterClientNode(Socket _socketServerNode, ModelServer _model, Logger _logger, int _portClientNode, Client _client) throws IOException {
+	public MasterClientNode(Socket _socketServerNode, ModelServer _model, Logger _logger, int _portClientNode, Client _client) {
+		runningThread = true;
+		connectedToServer = false;
 		this.addressClientNode = _socketServerNode.getInetAddress().toString().split("/")[1];
 		this.model = _model;
 		this.logger = _logger;
 		this.portClientNode = _portClientNode;
 		this.client=_client;
+		
 	}
 
 	public void run() {
+		
 		while (runningThread) {
 			while (!connectedToServer && runningThread) {
 				try {
@@ -42,49 +46,52 @@ public class MasterClientNode extends Thread {
 					logger.info("connected to sClient");
 				} catch (IOException e) {
 					try {
-						Thread.sleep(500);
+						Thread.sleep(100);
 					} catch (InterruptedException e1) {
 						logger.error(e1);
+						connectedToServer = false;
+						runningThread = false;
 					}
 				}
 			}
 			try {
 				this.inStream = new BufferedReader(new InputStreamReader(socketClientNode.getInputStream()));
 				this.outStream = new PrintWriter(socketClientNode.getOutputStream(), true);
-			} catch (IOException e) {
-				logger.error(e);
-			}
-			try {
-				while (true) {
+				while (runningThread) {
 					strLine = inStream.readLine();
 					logger.info("received: " + strLine);
-					Command cmd = client.getCommandRegister().getCommandByName(strLine);
-					outStream.write(cmd.execute() + "\n");
+					String args=strLine.split(":")[1].trim();
+					String strCmd=strLine.split(":")[0].trim();
+					Command cmd = client.getCommandRegister().getCommandByName(strCmd);
+					outStream.write(cmd.execute(args) + "\n");
 					outStream.flush();
-					
 				}
+				inStream.close();
+				outStream.close();
+				socketClientNode.close();
 			} catch (UnknownHostException e) {
 				logger.error("Don’t know about host " + addressClientNode);
-				System.exit(1);
+				connectedToServer = false;
+				runningThread = false;
 			} catch (IOException e) {
 				logger.info("Lost connection to: " + addressClientNode);
 				connectedToServer = false;
 				runningThread = false;
 			}
 		}
-		logger.info("EchoClient: closing...");
-		outStream.close();
-		try {
-			inStream.close();
-			socketClientNode.close();
-		} catch (IOException e) {
-			logger.error(e);
-		}
+		
+		logger.info("closing client node...");
+		client.closeServer();
 	}
 
 	public void setClient(Client _client) {
 		this.client=_client;
 		
+	}
+
+	public void close() {
+		connectedToServer = false;
+		runningThread = false;
 	}
 
 }

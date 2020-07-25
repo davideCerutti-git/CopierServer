@@ -11,29 +11,41 @@ import master.MasterNode;
 import settings.Settings;
 
 public class ModelServer {
-	private static Settings settings;
-	private static int serverPort, portServerFrom;
-	private static MasterNode ts;
-	private MainViewServerController mvsController;
-	private ObservableList<Client> clientsObservableList;
+	
+	//Utils:
 	public static final Logger log = Logger.getLogger(ModelServer.class.getName());
+	
+	//Settings:
+	private static Settings settings;
+	private static int masterServerNodePort, masterClentNodePort;
+	
+	//Owns:
+	private static MasterNode masterNode;
+	private MainViewServerController mvsController;
+	private ObservableList<Client> clientsList;
+	
+	
 	
 	public ModelServer(MainViewServerController _mvsController) throws IOException {
 		readSettings();
-		clientsObservableList = FXCollections.observableArrayList();
-		ts=new MasterNode(this,serverPort, portServerFrom,log);
-		ts.start();
+		clientsList = FXCollections.observableArrayList();
+		masterNode=new MasterNode(this,masterServerNodePort, masterClentNodePort,log);
+		masterNode.start();
 	}
 
 	private void readSettings() {
+		
+		//Load settings:
 		settings = new Settings();
 		try {
 			settings.load(new FileReader("properties/settings.cfg"));
 		} catch (IOException e) {
 			log.error(e);
 		}
-		serverPort = Integer.parseInt(settings.getProperty("copierServerPort"));
-		portServerFrom = Integer.parseInt(settings.getProperty("portServerFrom"));
+		
+		//Read settings:
+		masterServerNodePort = Integer.parseInt(settings.getProperty("masterServerNodePort"));
+		masterClentNodePort = Integer.parseInt(settings.getProperty("masterClentNodePort"));
 	}
 	
 	public void setController(MainViewServerController mainController) {
@@ -45,7 +57,7 @@ public class ModelServer {
 //		for(Client c: clientsObservableList) {
 //			c.getsTh().close();
 //		}
-		ts.close();
+		masterNode.close();
 	}
 
 	public MainViewServerController getMvsController() {
@@ -57,7 +69,7 @@ public class ModelServer {
 	}
 
 	public ObservableList<Client> getClientObservableList() {
-		return clientsObservableList;
+		return clientsList;
 	}
 
 }

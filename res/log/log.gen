@@ -425,3 +425,313 @@
 [ INFO] 2020-07-23 21:26:10,867 received: not in standby
 [ INFO] 2020-07-23 21:26:18,326 received: in standby
 [ INFO] 2020-07-23 21:26:20,611 received: not in standby
+[ INFO] 2020-07-24 09:17:02,373 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-24 09:17:02,456 Slave connected
+[ INFO] 2020-07-24 09:17:02,456 Tring to connect to ClientNode 192.168.2.4
+[ INFO] 2020-07-24 09:17:02,459 connected to sClient
+[ INFO] 2020-07-24 09:17:02,848 Slave connected
+[ INFO] 2020-07-24 09:17:35,212 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-24 09:17:35,284 Slave connected
+[ INFO] 2020-07-24 09:17:35,285 Tring to connect to ClientNode 192.168.2.4
+[ INFO] 2020-07-24 09:17:35,286 Slave connected
+[ INFO] 2020-07-24 09:17:35,286 Tring to connect to ClientNode 192.168.10.102
+[ INFO] 2020-07-24 09:17:35,290 connected to sClient
+[ INFO] 2020-07-24 09:17:35,290 connected to sClient
+[ INFO] 2020-07-24 09:18:04,083 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-24 09:18:04,485 Slave connected
+[ INFO] 2020-07-24 09:18:04,486 Tring to connect to ClientNode 192.168.10.102
+[ INFO] 2020-07-24 09:18:04,507 connected to sClient
+[ INFO] 2020-07-24 09:18:14,294 to client: printed: get name
+[ INFO] 2020-07-24 09:18:14,295 waiting response
+[ INFO] 2020-07-24 09:18:14,305 Response: SFIX
+[ INFO] 2020-07-24 09:23:45,169 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-24 09:23:45,450 Slave connected
+[ INFO] 2020-07-24 09:23:45,450 Tring to connect to ClientNode 192.168.10.102
+[ INFO] 2020-07-24 09:23:45,453 connected to sClient
+[ INFO] 2020-07-24 09:25:24,324 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-24 09:25:24,529 Slave connected
+[ INFO] 2020-07-24 09:25:24,529 Tring to connect to ClientNode 192.168.10.102
+[ INFO] 2020-07-24 09:25:24,531 connected to sClient
+[ INFO] 2020-07-24 09:25:35,655 to client: printed: get name
+[ INFO] 2020-07-24 09:25:35,656 waiting response
+[ INFO] 2020-07-24 09:25:35,666 Response: SFIX
+[ INFO] 2020-07-24 11:16:00,772 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-24 11:18:00,516 Slave connected
+[ INFO] 2020-07-24 11:18:00,517 Tring to connect to ClientNode 192.168.10.102
+[ INFO] 2020-07-24 11:18:00,522 connected to sClient
+[ INFO] 2020-07-24 13:33:31,695 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-24 13:55:29,652 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-24 13:55:32,642 Slave connected
+[ INFO] 2020-07-24 13:55:32,642 Tring to connect to ClientNode 192.168.10.108
+[ INFO] 2020-07-24 13:55:32,646 connected to sClient
+[ INFO] 2020-07-24 13:55:43,004 received: in standby
+[ INFO] 2020-07-24 13:55:44,712 received: not in standby
+[ INFO] 2020-07-24 13:58:38,867 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-24 14:00:12,768 Slave connected
+[ INFO] 2020-07-24 14:00:12,768 Tring to connect to ClientNode 192.168.10.102
+[ INFO] 2020-07-24 14:00:12,775 connected to sClient
+[ INFO] 2020-07-24 14:00:18,719 received: in standby
+[ INFO] 2020-07-24 14:00:20,581 received: not in standby
+[ INFO] 2020-07-24 14:00:29,015 received: in standby
+[ INFO] 2020-07-24 14:00:36,498 received: not in standby
+[ INFO] 2020-07-24 14:00:44,968 received: in standby
+[ INFO] 2020-07-24 14:00:48,297 received: not in standby
+[ INFO] 2020-07-24 14:01:05,682 received: in standby
+[ INFO] 2020-07-24 14:01:17,078 received: not in standby
+[ INFO] 2020-07-24 14:01:23,842 received: in standby
+[ INFO] 2020-07-24 14:01:26,090 received: not in standby
+[ INFO] 2020-07-24 14:01:31,824 received: in standby
+[ INFO] 2020-07-24 14:01:32,717 received: not in standby
+[ INFO] 2020-07-24 14:01:41,224 received: in standby
+[ INFO] 2020-07-24 14:01:45,187 received: not in standby
+[ INFO] 2020-07-24 14:01:51,910 received: in standby
+[ INFO] 2020-07-24 14:01:52,604 received: not in standby
+[ INFO] 2020-07-24 14:01:59,890 received: in standby
+[ INFO] 2020-07-24 14:02:11,010 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-24 14:02:11,211 Slave connected
+[ INFO] 2020-07-24 14:02:11,211 Tring to connect to ClientNode 192.168.10.102
+[ INFO] 2020-07-24 14:02:11,215 connected to sClient
+[ INFO] 2020-07-24 15:35:27,172 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-24 15:35:27,225 Slave connected
+[ INFO] 2020-07-24 15:35:27,232 Tring to connect to ClientNode 192.168.10.108
+[ INFO] 2020-07-24 15:35:27,236 connected to sClient
+[ INFO] 2020-07-24 15:35:33,673 Lost connection to: 192.168.10.108
+[ INFO] 2020-07-24 15:35:33,673 EchoClient: closing...
+[ INFO] 2020-07-24 15:35:40,103 Slave connected
+[ INFO] 2020-07-24 15:35:40,134 EchoClient: closing...
+[ INFO] 2020-07-24 15:36:38,967 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-24 15:36:40,605 Slave connected
+[ INFO] 2020-07-24 15:36:40,624 Tring to connect to ClientNode 192.168.10.108
+[ INFO] 2020-07-24 15:36:40,628 connected to sClient
+[ INFO] 2020-07-24 15:36:46,350 Lost connection to: 192.168.10.108
+[ INFO] 2020-07-24 15:36:46,351 EchoClient: closing...
+[ INFO] 2020-07-24 15:36:52,974 Slave connected
+[ INFO] 2020-07-24 15:36:52,978 EchoClient: closing...
+[ INFO] 2020-07-24 15:37:49,676 to client: printed: get name
+[ INFO] 2020-07-24 15:37:49,676 waiting response
+[ERROR] 2020-07-24 15:37:49,676 java.net.SocketException: Connection reset
+[ INFO] 2020-07-24 20:42:22,003 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-24 20:42:22,213 Slave connected
+[ INFO] 2020-07-24 20:42:22,213 Tring to connect to ClientNode 192.168.2.8
+[ INFO] 2020-07-24 20:42:22,218 connected to sClient
+[ INFO] 2020-07-24 20:43:38,279 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-24 20:43:42,666 Slave connected
+[ INFO] 2020-07-24 20:43:42,666 Tring to connect to ClientNode 192.168.2.8
+[ INFO] 2020-07-24 20:43:42,671 connected to sClient
+[ INFO] 2020-07-24 20:43:48,361 received: in standby
+[ INFO] 2020-07-24 20:43:54,977 received: not in standby
+[ INFO] 2020-07-24 20:44:00,837 received: in standby
+[ INFO] 2020-07-24 21:01:14,736 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-24 21:01:15,241 Slave connected
+[ INFO] 2020-07-24 21:01:15,242 Tring to connect to ClientNode 192.168.2.9
+[ INFO] 2020-07-24 21:01:15,247 connected to sClient
+[ INFO] 2020-07-24 21:01:37,571 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-24 21:01:43,658 Slave connected
+[ INFO] 2020-07-24 21:01:43,659 Tring to connect to ClientNode 192.168.2.9
+[ INFO] 2020-07-24 21:01:43,664 connected to sClient
+[ INFO] 2020-07-24 21:01:49,555 received: in standby
+[ INFO] 2020-07-24 21:02:04,467 received: not in standby
+[ INFO] 2020-07-24 21:02:10,012 received: in standby
+[ INFO] 2020-07-24 21:02:25,453 received: not in standby
+[ INFO] 2020-07-24 21:02:30,984 received: in standby
+[ INFO] 2020-07-24 21:02:36,145 received: not in standby
+[ INFO] 2020-07-24 21:02:37,621 Lost connection to: 192.168.2.9
+[ INFO] 2020-07-24 21:02:37,622 EchoClient: closing...
+[ INFO] 2020-07-24 21:04:30,871 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-24 21:04:35,964 Slave connected
+[ INFO] 2020-07-24 21:04:35,965 Tring to connect to ClientNode 192.168.2.9
+[ INFO] 2020-07-24 21:04:35,971 connected to sClient
+[ INFO] 2020-07-24 21:04:41,752 received: in standby
+[ INFO] 2020-07-24 21:04:52,485 to client: printed: get name
+[ INFO] 2020-07-24 21:04:52,485 waiting response
+[ INFO] 2020-07-24 21:04:52,499 Response: SFIX
+[ INFO] 2020-07-25 10:53:40,309 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 10:54:02,177 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 10:54:47,164 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 10:54:49,368 Slave connected
+[ INFO] 2020-07-25 10:54:49,369 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 10:54:49,372 connected to sClient
+[ INFO] 2020-07-25 10:54:55,816 Lost connection to: 192.168.2.3
+[ INFO] 2020-07-25 10:54:55,817 EchoClient: closing...
+[ INFO] 2020-07-25 11:04:48,010 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 11:08:16,456 Slave connected
+[ INFO] 2020-07-25 11:08:16,457 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 11:08:16,460 connected to sClient
+[ INFO] 2020-07-25 11:08:18,885 Lost connection to: 192.168.2.3
+[ INFO] 2020-07-25 11:08:18,886 EchoClient: closing...
+[ INFO] 2020-07-25 11:08:29,726 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 11:08:33,583 Slave connected
+[ INFO] 2020-07-25 11:08:33,584 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 11:08:33,587 connected to sClient
+[ INFO] 2020-07-25 11:08:39,133 Lost connection to: 192.168.2.3
+[ INFO] 2020-07-25 11:08:39,133 EchoClient: closing...
+[ INFO] 2020-07-25 11:08:54,393 Slave connected
+[ INFO] 2020-07-25 11:08:54,393 EchoClient: closing...
+[ INFO] 2020-07-25 11:09:39,115 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 11:09:42,090 Slave connected
+[ INFO] 2020-07-25 11:09:42,090 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 11:09:42,095 connected to sClient
+[ INFO] 2020-07-25 11:09:49,486 Lost connection to: 192.168.2.3
+[ INFO] 2020-07-25 11:09:49,487 EchoClient: closing...
+[ INFO] 2020-07-25 11:09:56,252 Slave connected
+[ INFO] 2020-07-25 11:09:56,252 EchoClient: closing...
+[ INFO] 2020-07-25 11:10:14,251 Slave connected
+[ INFO] 2020-07-25 11:10:14,252 EchoClient: closing...
+[ INFO] 2020-07-25 11:10:53,215 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 11:10:56,423 Slave connected
+[ INFO] 2020-07-25 11:10:56,423 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 11:10:56,426 connected to sClient
+[ INFO] 2020-07-25 11:11:02,673 Lost connection to: 192.168.2.3
+[ INFO] 2020-07-25 11:11:02,673 EchoClient: closing...
+[ INFO] 2020-07-25 11:11:09,345 Slave connected
+[ INFO] 2020-07-25 11:11:09,346 EchoClient: closing...
+[ INFO] 2020-07-25 11:13:14,100 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 11:13:16,151 Slave connected
+[ INFO] 2020-07-25 11:13:16,151 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 11:13:16,154 connected to sClient
+[ INFO] 2020-07-25 11:13:23,713 Lost connection to: 192.168.2.3
+[ INFO] 2020-07-25 11:13:23,714 EchoClient: closing...
+[ INFO] 2020-07-25 11:13:36,001 Slave connected
+[ INFO] 2020-07-25 11:13:36,001 EchoClient: closing...
+[ INFO] 2020-07-25 11:19:20,376 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 11:19:22,936 Slave connected
+[ INFO] 2020-07-25 11:19:22,936 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 11:19:22,940 connected to sClient
+[ INFO] 2020-07-25 11:19:29,923 Lost connection to: 192.168.2.3
+[ INFO] 2020-07-25 11:19:29,924 EchoClient: closing...
+[ INFO] 2020-07-25 11:19:39,506 Slave connected
+[ INFO] 2020-07-25 11:19:39,507 EchoClient: closing...
+[ INFO] 2020-07-25 11:21:47,672 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 11:21:50,097 Slave connected
+[ INFO] 2020-07-25 11:21:50,097 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 11:21:50,099 connected to sClient
+[ INFO] 2020-07-25 11:22:02,176 Lost connection to: 192.168.2.3
+[ INFO] 2020-07-25 11:22:02,176 EchoClient: closing...
+[ INFO] 2020-07-25 11:22:07,687 Slave connected
+[ INFO] 2020-07-25 11:22:07,687 EchoClient: closing...
+[ INFO] 2020-07-25 16:08:11,596 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 16:08:15,798 Slave connected
+[ INFO] 2020-07-25 16:08:15,798 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 16:08:15,802 connected to sClient
+[ INFO] 2020-07-25 16:08:21,485 Lost connection to: 192.168.2.3
+[ INFO] 2020-07-25 16:08:21,485 EchoClient: closing...
+[ INFO] 2020-07-25 16:10:05,454 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 16:10:05,485 Slave connected
+[ INFO] 2020-07-25 16:10:05,486 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 16:10:05,489 connected to sClient
+[ INFO] 2020-07-25 16:10:10,368 Lost connection to: 192.168.2.3
+[ INFO] 2020-07-25 16:10:10,368 EchoClient: closing...
+[ INFO] 2020-07-25 16:10:13,707 Slave connected
+[ INFO] 2020-07-25 16:10:13,707 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 16:10:14,208 connected to sClient
+[ INFO] 2020-07-25 16:10:14,208 EchoClient: closing...
+[ INFO] 2020-07-25 16:16:45,678 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 16:16:45,735 Slave connected
+[ INFO] 2020-07-25 16:16:45,735 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 16:16:45,738 connected to sClient
+[ INFO] 2020-07-25 16:16:49,149 Lost connection to: 192.168.2.3
+[ INFO] 2020-07-25 16:16:49,149 EchoClient: closing...
+[ INFO] 2020-07-25 16:16:56,481 Slave connected
+[ INFO] 2020-07-25 16:16:56,481 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 16:16:56,534 connected to sClient
+[ INFO] 2020-07-25 16:16:56,535 EchoClient: closing...
+[ INFO] 2020-07-25 16:32:44,501 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 16:32:49,394 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 16:32:49,394 Slave connected
+[ INFO] 2020-07-25 16:32:49,397 connected to sClient
+[ INFO] 2020-07-25 16:32:57,191 Lost connection to: 192.168.2.3
+[ INFO] 2020-07-25 16:32:57,191 EchoClient: closing...
+[ INFO] 2020-07-25 16:33:11,184 Slave connected
+[ INFO] 2020-07-25 16:33:11,184 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 16:33:11,243 connected to sClient
+[ INFO] 2020-07-25 16:33:11,243 EchoClient: closing...
+[ INFO] 2020-07-25 16:36:11,436 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 16:36:13,729 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 16:36:13,729 Slave connected
+[ INFO] 2020-07-25 16:36:13,732 connected to sClient
+[ INFO] 2020-07-25 16:36:16,794 Lost connection to: 192.168.2.3
+[ INFO] 2020-07-25 16:36:16,794 EchoClient: closing...
+[DEBUG] 2020-07-25 16:36:16,795 closing client Node
+[ INFO] 2020-07-25 16:46:02,649 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 16:46:37,354 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 16:46:37,483 Tring to connect to ClientNode 192.168.2.6
+[ INFO] 2020-07-25 16:46:37,483 Slave connected
+[ INFO] 2020-07-25 16:46:37,488 connected to sClient
+[ INFO] 2020-07-25 16:46:52,583 Slave connected
+[ INFO] 2020-07-25 16:46:52,584 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 16:46:52,585 connected to sClient
+[ INFO] 2020-07-25 16:47:01,373 received: in standby
+[ INFO] 2020-07-25 16:47:03,582 received: not in standby
+[ INFO] 2020-07-25 16:47:12,664 received: in standby
+[ INFO] 2020-07-25 16:47:23,381 received: not in standby
+[ INFO] 2020-07-25 16:47:26,754 Lost connection to: 192.168.2.3
+[ INFO] 2020-07-25 16:47:26,755 EchoClient: closing...
+[DEBUG] 2020-07-25 16:47:26,755 closing client Node
+[DEBUG] 2020-07-25 16:47:26,755 closing client Node
+[ INFO] 2020-07-25 16:47:34,812 Lost connection to: 192.168.2.6
+[ INFO] 2020-07-25 16:47:34,812 EchoClient: closing...
+[ INFO] 2020-07-25 16:47:38,534 Slave connected
+[ INFO] 2020-07-25 16:47:38,534 Tring to connect to ClientNode 192.168.2.6
+[DEBUG] 2020-07-25 16:47:38,535 closing client Node
+[ INFO] 2020-07-25 16:47:38,596 connected to sClient
+[ INFO] 2020-07-25 16:47:38,598 EchoClient: closing...
+[ INFO] 2020-07-25 16:47:51,723 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 16:47:51,740 Tring to connect to ClientNode 192.168.2.6
+[ INFO] 2020-07-25 16:47:51,741 Slave connected
+[ INFO] 2020-07-25 16:47:51,745 connected to sClient
+[ INFO] 2020-07-25 16:48:31,493 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 16:48:35,958 Tring to connect to ClientNode 192.168.2.6
+[ INFO] 2020-07-25 16:48:35,959 Slave connected
+[ INFO] 2020-07-25 16:48:35,965 connected to sClient
+[ INFO] 2020-07-25 16:48:43,963 received: in standby
+[ INFO] 2020-07-25 16:48:49,150 Slave connected
+[ INFO] 2020-07-25 16:48:49,150 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 16:48:49,153 connected to sClient
+[ INFO] 2020-07-25 16:48:57,173 received: in standby
+[ INFO] 2020-07-25 16:48:58,462 received: not in standby
+[ INFO] 2020-07-25 16:49:01,217 received: not in standby
+[ INFO] 2020-07-25 16:49:06,893 received: in standby
+[ INFO] 2020-07-25 16:49:06,973 received: not in standby
+[ INFO] 2020-07-25 16:49:15,172 received: in standby
+[ INFO] 2020-07-25 16:49:16,666 received: not in standby
+[ INFO] 2020-07-25 16:49:22,890 received: in standby
+[ INFO] 2020-07-25 16:49:24,320 received: in standby
+[ INFO] 2020-07-25 16:49:28,733 received: not in standby
+[ INFO] 2020-07-25 16:49:30,681 received: not in standby
+[ INFO] 2020-07-25 16:49:32,337 Lost connection to: 192.168.2.6
+[ INFO] 2020-07-25 16:49:32,337 EchoClient: closing...
+[DEBUG] 2020-07-25 16:49:32,337 closing client Node
+[DEBUG] 2020-07-25 16:49:32,337 closing client Node
+[ INFO] 2020-07-25 16:49:41,846 Slave connected
+[DEBUG] 2020-07-25 16:49:41,846 closing client Node
+[ INFO] 2020-07-25 16:49:41,847 Tring to connect to ClientNode 192.168.2.6
+[ INFO] 2020-07-25 16:49:41,951 connected to sClient
+[ INFO] 2020-07-25 16:49:41,952 EchoClient: closing...
+[ INFO] 2020-07-25 16:49:45,622 Lost connection to: 192.168.2.3
+[ INFO] 2020-07-25 16:49:45,623 EchoClient: closing...
+[ INFO] 2020-07-25 16:49:50,757 Slave connected
+[DEBUG] 2020-07-25 16:49:50,757 closing client Node
+[ INFO] 2020-07-25 16:49:50,757 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 16:49:50,821 connected to sClient
+[ INFO] 2020-07-25 16:49:50,822 EchoClient: closing...
+[ INFO] 2020-07-25 17:22:41,333 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 17:22:46,737 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 17:22:46,737 Slave connected
+[ INFO] 2020-07-25 17:22:46,740 connected to sClient
+[ INFO] 2020-07-25 17:22:50,654 to client: printed: get name
+[ INFO] 2020-07-25 17:22:50,655 waiting response
+[ INFO] 2020-07-25 17:22:50,659 Response: KEY118
+[ INFO] 2020-07-25 17:22:58,806 received: in standby
+[ INFO] 2020-07-25 17:23:00,238 received: not in standby
+[ INFO] 2020-07-25 17:23:04,163 Lost connection to: 192.168.2.3
+[ INFO] 2020-07-25 17:23:04,164 EchoClient: closing...
+[DEBUG] 2020-07-25 17:23:04,164 closing client Node
+[ INFO] 2020-07-25 17:23:24,657 MasterNode started, waiting for slaves...
+[ INFO] 2020-07-25 17:23:27,898 Tring to connect to ClientNode 192.168.2.3
+[ INFO] 2020-07-25 17:23:27,898 Slave connected
+[ INFO] 2020-07-25 17:23:27,901 connected to sClient
+[ INFO] 2020-07-25 17:23:31,894 to client: printed: get name
+[ INFO] 2020-07-25 17:23:31,895 waiting response
+[ INFO] 2020-07-25 17:23:31,901 Response: KEY118
+[ INFO] 2020-07-25 17:23:46,287 received: in standby
+[ INFO] 2020-07-25 17:23:48,502 received: not in standby

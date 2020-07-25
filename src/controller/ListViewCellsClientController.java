@@ -29,6 +29,10 @@ public class ListViewCellsClientController extends ListCell<Client> {
 	private int index=0;
 	private ModelServer model;
 	
+	private final Image IMAGE_STANDBY  = new Image(getClass().getResourceAsStream("/sleep.png"));
+    private final Image IMAGE_NOT_STANDBY  = new Image(getClass().getResourceAsStream("/person.png"));
+
+	
 	@FXML // ResourceBundle that was given to the FXMLLoader
 	private ResourceBundle resources;
 
@@ -46,6 +50,9 @@ public class ListViewCellsClientController extends ListCell<Client> {
 
 	@FXML // fx:id="mainPane"
 	private AnchorPane mainPane; // Value injected by FXMLLoader
+	
+    @FXML // fx:id="imageViewClientStatusStandBy"
+    private ImageView imageViewClientStatusStandBy; // Value injected by FXMLLoader
 
 	@FXML // This method is called by the FXMLLoader when initialization is complete
 	void initialize() {
@@ -125,8 +132,13 @@ public class ListViewCellsClientController extends ListCell<Client> {
 			setText(null);
 			setGraphic(null);
 		} else {
+			//if(_client==null)System.out.println("client = null");
 			lableNameClient.setText(_client.getClientName());
 			labelAddressClient.setText(_client.getClientAddress());
+			if(_client.getInStandby())
+				imageViewClientStatusStandBy.setImage(IMAGE_STANDBY);
+			else
+				imageViewClientStatusStandBy.setImage(IMAGE_NOT_STANDBY);
 			setGraphic(mainPane);
 		}
 	}

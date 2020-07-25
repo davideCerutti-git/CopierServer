@@ -11,6 +11,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 import org.apache.log4j.Logger;
 
+import javafx.application.Platform;
 import server.Client;
 import server.ModelServer;
 
@@ -25,24 +26,34 @@ public class MasterServerNode extends Thread {
 	private ModelServer model;
 	private Client client;
 
-	public MasterServerNode(Socket _socket, Logger _log, ModelServer _model, int _portClientNode, Client _client) throws IOException {
-		
+	public MasterServerNode(Socket _socket, Logger _log, ModelServer _model, int _portClientNode, Client _client) {
+		runningThread = true;
+		this.client = _client;
+		client.getCommandsQueue().add("get name");
 		this.model = _model;
+		if(_socket==null)System.out.println("_socket = null");
 		this.socketServerNode = _socket;
 		this.logger = _log;
-		this.inStream = new BufferedReader(new InputStreamReader(socketServerNode.getInputStream()));
-		this.outStream = new PrintWriter(socketServerNode.getOutputStream(), true);
-		this.clientNode = new MasterClientNode(socketServerNode, model, logger, _portClientNode,_client);
-		this.client=_client;
-		this.clientNode.start();
+		try {
+			this.inStream = new BufferedReader(new InputStreamReader(socketServerNode.getInputStream()));
+			this.outStream = new PrintWriter(socketServerNode.getOutputStream(), true);
+		} catch (Exception e) {
+			logger.error(e);
+		}
+		client.setClientNode(new MasterClientNode(socketServerNode, model, logger, _portClientNode, client));
+		client.getClientNode().start();
+		
+		
 	}
 
 	public void run() {
-		try {
-			while (runningThread) {
+
+		while (runningThread) {
+			try {
 				// WRITE commands to Client
 				outLine = client.getCommandsQueue().poll();
 				if (outLine != null) {
+					logger.info("writing outline");
 					outStream.write(outLine + "\n");
 					outStream.flush();
 					logger.info("to client: printed: " + outLine);
@@ -51,18 +62,19 @@ public class MasterServerNode extends Thread {
 					logger.info("Response: " + inStream.readLine());
 					outLine = null;
 				}
+			} catch (Exception e) {
+				logger.error(e);
+				runningThread = false;
 			}
-		} catch (IOException e) {
-			logger.error(e);
-			runningThread = false;
 		}
+
+		logger.debug("closing server node...");
+		client.closeClient();
 	}
 
 	public void close() {
 		runningThread = false;
 	}
-
-	
 
 	public Client getClient() {
 		return client;
@@ -71,6 +83,5 @@ public class MasterServerNode extends Thread {
 	public void setClient(Client client) {
 		this.client = client;
 	}
-	
 
 }
