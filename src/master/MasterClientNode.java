@@ -19,14 +19,15 @@ public class MasterClientNode extends Thread {
 	private Logger logger;
 	private boolean runningThread = true, connectedToServer = false;
 	private String strLine;
+	@SuppressWarnings("unused")
 	private ModelServer model;
 	private String addressClientNode;
 	private int portClientNode;
-	Client client;
+	private Client client;
 
 	public MasterClientNode(Socket _socketServerNode, ModelServer _model, Logger _logger, int _portClientNode, Client _client) {
-		runningThread = true;
-		connectedToServer = false;
+		this.runningThread = true;
+		this.connectedToServer = false;
 		this.addressClientNode = _socketServerNode.getInetAddress().toString().split("/")[1];
 		this.model = _model;
 		this.logger = _logger;
@@ -82,11 +83,6 @@ public class MasterClientNode extends Thread {
 		
 		logger.info("closing client node...");
 		client.closeServer();
-	}
-
-	public void setClient(Client _client) {
-		this.client=_client;
-		
 	}
 
 	public void close() {

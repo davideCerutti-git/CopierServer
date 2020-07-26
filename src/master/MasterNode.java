@@ -3,11 +3,8 @@ package master;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.SocketException;
 import java.util.concurrent.Semaphore;
-
 import org.apache.log4j.Logger;
-
 import javafx.application.Platform;
 import server.Client;
 import server.ModelServer;
@@ -16,7 +13,6 @@ public class MasterNode extends Thread {
 
 	static boolean runningThread = true;
 	private ServerSocket masterServerSocket = null;
-
 	private Socket socket = null;
 	private int portClientNode;
 	private Logger logger;

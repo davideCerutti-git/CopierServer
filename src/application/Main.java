@@ -36,6 +36,7 @@ public class Main extends Application {
 			MainViewServerController mainController = (MainViewServerController) loader.getController();
 			modelServer = new ModelServer(mainController);
 			mainController.setModel(modelServer);
+			mainController.setLogger(modelServer.getLogger());
 			modelServer.setController(mainController);
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("/application.css").toExternalForm());

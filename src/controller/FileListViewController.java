@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TreeView;
+import server.ModelServer;
 
 public class FileListViewController implements Initializable {
 
@@ -29,5 +30,10 @@ public class FileListViewController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
+	}
+
+	public void setModel(ModelServer model) {
+		
+		
 	}
 }

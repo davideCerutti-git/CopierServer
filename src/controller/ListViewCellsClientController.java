@@ -6,6 +6,7 @@ package controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import org.apache.log4j.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -25,14 +26,13 @@ public class ListViewCellsClientController extends ListCell<Client> {
 
 	private FXMLLoader mLLoader;
 	private ContextMenu cMenu;
-	static private int count=0;
-	private int index=0;
+	private Logger logger;
+	private Client client;
 	private ModelServer model;
 	
 	private final Image IMAGE_STANDBY  = new Image(getClass().getResourceAsStream("/sleep.png"));
     private final Image IMAGE_NOT_STANDBY  = new Image(getClass().getResourceAsStream("/person.png"));
 
-	
 	@FXML // ResourceBundle that was given to the FXMLLoader
 	private ResourceBundle resources;
 
@@ -53,6 +53,7 @@ public class ListViewCellsClientController extends ListCell<Client> {
 	
     @FXML // fx:id="imageViewClientStatusStandBy"
     private ImageView imageViewClientStatusStandBy; // Value injected by FXMLLoader
+	
 
 	@FXML // This method is called by the FXMLLoader when initialization is complete
 	void initialize() {
@@ -62,10 +63,8 @@ public class ListViewCellsClientController extends ListCell<Client> {
 		assert imageViewClientStatus != null : "fx:id=\"imageViewClientStatus\" was not injected: check your FXML file 'ListViewCellsClient.fxml'.";
 	}
 
-	public ListViewCellsClientController(ModelServer _model) {
-		this.model=_model;
-		this.index=ListViewCellsClientController.count-1;
-		ListViewCellsClientController.count++;
+	public ListViewCellsClientController(ModelServer _model, Logger _logger) {
+		this.logger=_logger;
 		cMenu = makeContextMenuClient();
 		this.setContextMenu(cMenu);
 		loadFXML();
@@ -73,25 +72,18 @@ public class ListViewCellsClientController extends ListCell<Client> {
 
 	private ContextMenu makeContextMenuClient() {
 		ContextMenu contextMenu=new ContextMenu();
+		
 		MenuItem menuItem1 = new MenuItem("File list");
-		menuItem1.setGraphic(new ImageView(new Image(getClass().getResourceAsStream("/treeStructureIcon16.png"))));
 		MenuItem menuItem2 = new MenuItem("Connect");
 		MenuItem menuItem3 = new MenuItem("Disconnect");
-		MenuItem menuItem4 = new MenuItem("Update");
-		menuItem4.setGraphic(new ImageView(new Image(getClass().getResourceAsStream("/updateIcon16.png"))));
-		menuItem3.setOnAction((event) -> {
-			lableNameClient.setText(" Disconnected");
-		});
+		MenuItem menuItem4 = new MenuItem("Get name");
+		MenuItem menuItem5 = new MenuItem("Set in startup");
+		MenuItem menuItem6 = new MenuItem("Remove startup");
+		MenuItem menuItem7 = new MenuItem("Rerstart");
 		
-		menuItem4.setOnAction((event) -> {
-			System.out.println(index);
-			model.getClientObservableList().get(index).getCommandsQueue().add("get name");
-		});
-		menuItem2.setOnAction((event) -> {
-			model.getClientObservableList().get(0).setClientName("pippo");
-			updateItem(model.getClientObservableList().get(0),false);
-//			lableNameClient.setText(" Connected");
-		});
+		menuItem1.setGraphic(new ImageView(new Image(getClass().getResourceAsStream("/treeStructureIcon16.png"))));
+		menuItem4.setGraphic(new ImageView(new Image(getClass().getResourceAsStream("/updateIcon16.png"))));
+		
 		menuItem1.setOnAction((event) -> {
 			Stage stage = new Stage();
 			FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("FileListView.fxml"));
@@ -99,19 +91,46 @@ public class ListViewCellsClientController extends ListCell<Client> {
 			try {
 				root = loader.load();
     		FileListViewController fileListViewController = (FileListViewController) loader.getController();
-//    		fileListViewController.setModel(model);
+    		fileListViewController.setModel(model);
     		Image icon = new Image(getClass().getResourceAsStream("/treeStructureIcon96.png"));
     		stage.getIcons().add(icon);
 				stage.setTitle("List files");
 				stage.setScene(new Scene(root));
 				stage.show();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error(e);
 			}
 
 		});
-		contextMenu.getItems().addAll(menuItem1, menuItem2, menuItem3, menuItem4);
+		
+		menuItem2.setOnAction((event) -> {
+//			client.setClientName("pippo");
+//			model.getClientObservableList().get(0).setClientName("pippo");
+//			updateItem(client,false);
+//			lableNameClient.setText(" Connected");
+		});
+		
+		menuItem3.setOnAction((event) -> {
+//			lableNameClient.setText(" Disconnected");
+		});
+		
+		menuItem4.setOnAction((event) -> {
+			client.getCommandsQueue().add("get name");
+		});
+		
+		menuItem5.setOnAction((event)->{
+			client.getCommandsQueue().add("set startup");
+		});
+		
+		menuItem6.setOnAction((event)->{
+			client.getCommandsQueue().add("remove startup");
+		});
+		
+		menuItem7.setOnAction((event)->{
+			client.getCommandsQueue().add("restart");
+		});
+		
+		contextMenu.getItems().addAll(menuItem1, menuItem2, menuItem3, menuItem4, menuItem5, menuItem6, menuItem7);
 		return contextMenu;
 	}
 
@@ -132,13 +151,13 @@ public class ListViewCellsClientController extends ListCell<Client> {
 			setText(null);
 			setGraphic(null);
 		} else {
-			//if(_client==null)System.out.println("client = null");
-			lableNameClient.setText(_client.getClientName());
-			labelAddressClient.setText(_client.getClientAddress());
+			this.client=_client;
+			this.lableNameClient.setText(_client.getClientName());
+			this.labelAddressClient.setText(_client.getClientAddress());
 			if(_client.getInStandby())
-				imageViewClientStatusStandBy.setImage(IMAGE_STANDBY);
+				this.imageViewClientStatusStandBy.setImage(IMAGE_STANDBY);
 			else
-				imageViewClientStatusStandBy.setImage(IMAGE_NOT_STANDBY);
+				this.imageViewClientStatusStandBy.setImage(IMAGE_NOT_STANDBY);
 			setGraphic(mainPane);
 		}
 	}

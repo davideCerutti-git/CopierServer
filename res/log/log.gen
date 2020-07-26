@@ -1040,3 +1040,276 @@
 [ INFO] 2020-07-25 23:21:31,251 received: not in standby: null
 [ INFO] 2020-07-25 23:21:36,865 received: not in standby: null
 [ INFO] 2020-07-25 23:21:42,182 received: in standby: null
+[ INFO] 2020-07-25 23:32:07,286 MasterNode started, waiting for clients...
+[DEBUG] 2020-07-25 23:32:39,145 Creating new client...
+[ INFO] 2020-07-25 23:32:39,156 Tring to connect to ClientNode 192.168.2.7
+[ INFO] 2020-07-25 23:32:39,156 writing outline
+[ INFO] 2020-07-25 23:32:39,157 to client: printed: get name
+[ INFO] 2020-07-25 23:32:39,158 waiting response
+[ INFO] 2020-07-25 23:32:39,193 Response: SFIX
+[ INFO] 2020-07-25 23:32:39,661 connected to sClient
+[ INFO] 2020-07-25 23:32:39,664 received: set name: SFIX
+[ INFO] 2020-07-25 23:32:44,985 received: in standby: null
+[ INFO] 2020-07-25 23:32:55,504 received: not in standby: null
+[ INFO] 2020-07-25 23:33:02,104 received: in standby: null
+[ INFO] 2020-07-25 23:33:13,962 received: not in standby: null
+[ INFO] 2020-07-25 23:33:20,072 Lost connection to: 192.168.2.7
+[ INFO] 2020-07-25 23:33:20,072 closing client node...
+[DEBUG] 2020-07-25 23:33:20,072 closing server node...
+[DEBUG] 2020-07-25 23:34:21,869 Creating new client...
+[ INFO] 2020-07-25 23:34:21,870 Tring to connect to ClientNode 192.168.2.8
+[ INFO] 2020-07-25 23:34:21,871 writing outline
+[ INFO] 2020-07-25 23:34:21,872 connected to sClient
+[ INFO] 2020-07-25 23:34:21,872 to client: printed: get name
+[ INFO] 2020-07-25 23:34:21,873 waiting response
+[ INFO] 2020-07-25 23:34:21,908 received: set name: SFIX
+[ INFO] 2020-07-25 23:34:21,908 Response: SFIX
+[ INFO] 2020-07-25 23:34:27,413 received: in standby: null
+[ INFO] 2020-07-26 10:14:15,872 MasterNode started, waiting for clients...
+[DEBUG] 2020-07-26 10:14:22,565 Creating new client...
+[ INFO] 2020-07-26 10:14:22,577 writing outline
+[ INFO] 2020-07-26 10:14:22,577 Tring to connect to ClientNode 192.168.2.9
+[ INFO] 2020-07-26 10:14:22,577 to client: printed: get name
+[ INFO] 2020-07-26 10:14:22,577 waiting response
+[ INFO] 2020-07-26 10:14:22,580 connected to sClient
+[ INFO] 2020-07-26 10:14:22,603 Response: SFIX
+[ INFO] 2020-07-26 10:14:22,603 received: set name: SFIX
+[ INFO] 2020-07-26 10:14:28,018 received: in standby: null
+[ INFO] 2020-07-26 10:14:31,983 writing outline
+[ INFO] 2020-07-26 10:14:31,984 to client: printed: set startup
+[ INFO] 2020-07-26 10:14:31,984 waiting response
+[ INFO] 2020-07-26 10:14:31,997 Response: null
+[ INFO] 2020-07-26 10:14:37,416 received: not in standby: null
+[ INFO] 2020-07-26 10:14:46,819 received: in standby: null
+[ INFO] 2020-07-26 10:14:50,035 received: not in standby: null
+[ INFO] 2020-07-26 10:15:18,251 received: in standby: null
+[ INFO] 2020-07-26 10:15:18,583 writing outline
+[ INFO] 2020-07-26 10:15:18,583 to client: printed: remove startup
+[ INFO] 2020-07-26 10:15:18,583 waiting response
+[ INFO] 2020-07-26 10:15:18,590 Response: null
+[ INFO] 2020-07-26 10:15:24,389 received: not in standby: null
+[ INFO] 2020-07-26 10:15:37,843 received: in standby: null
+[ INFO] 2020-07-26 10:15:47,147 received: not in standby: null
+[ INFO] 2020-07-26 10:15:48,914 received: in standby: null
+[ INFO] 2020-07-26 10:17:12,738 received: not in standby: null
+[ INFO] 2020-07-26 10:17:15,596 Lost connection to: 192.168.2.9
+[ INFO] 2020-07-26 10:17:15,596 closing client node...
+[DEBUG] 2020-07-26 10:17:15,597 closing server node...
+[DEBUG] 2020-07-26 10:17:43,375 Creating new client...
+[ INFO] 2020-07-26 10:17:43,376 Tring to connect to ClientNode 192.168.2.9
+[ INFO] 2020-07-26 10:17:43,377 writing outline
+[ INFO] 2020-07-26 10:17:43,377 to client: printed: get name
+[ INFO] 2020-07-26 10:17:43,377 waiting response
+[ INFO] 2020-07-26 10:17:43,377 connected to sClient
+[ INFO] 2020-07-26 10:17:43,410 received: set name: SFIX
+[ INFO] 2020-07-26 10:17:43,410 Response: SFIX
+[ INFO] 2020-07-26 10:17:48,853 received: in standby: null
+[ INFO] 2020-07-26 10:17:54,049 received: not in standby: null
+[ INFO] 2020-07-26 10:18:03,666 received: in standby: null
+[ INFO] 2020-07-26 10:18:11,293 MasterNode started, waiting for clients...
+[ INFO] 2020-07-26 10:18:40,967 MasterNode started, waiting for clients...
+[DEBUG] 2020-07-26 10:18:45,056 Creating new client...
+[ INFO] 2020-07-26 10:18:45,062 Tring to connect to ClientNode 192.168.2.9
+[ INFO] 2020-07-26 10:18:45,063 writing outline
+[ INFO] 2020-07-26 10:18:45,063 to client: printed: get name
+[ INFO] 2020-07-26 10:18:45,064 waiting response
+[ INFO] 2020-07-26 10:18:45,069 connected to sClient
+[ INFO] 2020-07-26 10:18:45,086 Response: SFIX
+[ INFO] 2020-07-26 10:18:45,086 received: set name: SFIX
+[ INFO] 2020-07-26 10:18:50,762 received: in standby: null
+[ INFO] 2020-07-26 10:18:53,247 writing outline
+[ INFO] 2020-07-26 10:18:53,247 to client: printed: remove startup
+[ INFO] 2020-07-26 10:18:53,248 waiting response
+[ INFO] 2020-07-26 10:18:53,257 Response: null
+[ INFO] 2020-07-26 10:18:56,631 received: not in standby: null
+[ INFO] 2020-07-26 10:19:11,303 writing outline
+[ INFO] 2020-07-26 10:19:11,304 to client: printed: set startup
+[ INFO] 2020-07-26 10:19:11,304 waiting response
+[ INFO] 2020-07-26 10:19:11,313 Response: null
+[ INFO] 2020-07-26 10:19:12,010 received: in standby: null
+[ INFO] 2020-07-26 10:19:13,927 received: not in standby: null
+[ INFO] 2020-07-26 10:19:31,654 writing outline
+[ INFO] 2020-07-26 10:19:31,655 to client: printed: restart
+[ INFO] 2020-07-26 10:19:31,655 waiting response
+[ INFO] 2020-07-26 10:19:32,617 received: in standby: null
+[ INFO] 2020-07-26 10:19:38,569 Response: null
+[ INFO] 2020-07-26 10:19:41,920 received: not in standby: null
+[ INFO] 2020-07-26 10:19:41,921 received: in standby: null
+[ INFO] 2020-07-26 10:19:48,621 received: not in standby: null
+[ INFO] 2020-07-26 10:20:03,519 received: in standby: null
+[ INFO] 2020-07-26 10:20:09,267 Lost connection to: 192.168.2.9
+[ INFO] 2020-07-26 10:20:09,267 closing client node...
+[DEBUG] 2020-07-26 10:20:09,268 closing server node...
+[DEBUG] 2020-07-26 10:31:44,305 Creating new client...
+[ INFO] 2020-07-26 10:31:44,307 Tring to connect to ClientNode 192.168.2.11
+[ INFO] 2020-07-26 10:31:44,307 writing outline
+[ INFO] 2020-07-26 10:31:44,308 to client: printed: get name
+[ INFO] 2020-07-26 10:31:44,309 waiting response
+[ INFO] 2020-07-26 10:31:44,312 connected to sClient
+[ INFO] 2020-07-26 10:31:44,343 received: set name: SFIX
+[ INFO] 2020-07-26 10:31:44,343 Response: SFIX
+[ INFO] 2020-07-26 10:38:03,930 MasterNode started, waiting for clients...
+[DEBUG] 2020-07-26 10:38:04,447 Creating new client...
+[ INFO] 2020-07-26 10:38:04,454 Tring to connect to ClientNode 192.168.2.11
+[ INFO] 2020-07-26 10:38:04,454 writing outline
+[ INFO] 2020-07-26 10:38:04,456 to client: printed: get name
+[ INFO] 2020-07-26 10:38:04,456 waiting response
+[ INFO] 2020-07-26 10:38:04,467 connected to sClient
+[ INFO] 2020-07-26 10:38:04,472 Response: SFIX
+[ INFO] 2020-07-26 10:38:09,271 writing outline
+[ INFO] 2020-07-26 10:38:09,272 to client: printed: restart
+[ INFO] 2020-07-26 10:38:09,272 waiting response
+[ INFO] 2020-07-26 10:38:09,285 Response: null
+[ INFO] 2020-07-26 10:38:23,463 writing outline
+[ INFO] 2020-07-26 10:38:23,464 to client: printed: set startup
+[ INFO] 2020-07-26 10:38:23,464 waiting response
+[ INFO] 2020-07-26 10:38:23,475 Response: null
+[ INFO] 2020-07-26 10:38:40,470 Lost connection to: 192.168.2.11
+[ INFO] 2020-07-26 10:38:40,471 closing client node...
+[DEBUG] 2020-07-26 10:38:40,471 closing server node...
+[DEBUG] 2020-07-26 10:40:11,373 Creating new client...
+[ INFO] 2020-07-26 10:40:11,374 Tring to connect to ClientNode 192.168.2.12
+[ INFO] 2020-07-26 10:40:11,374 writing outline
+[ INFO] 2020-07-26 10:40:11,374 to client: printed: get name
+[ INFO] 2020-07-26 10:40:11,374 waiting response
+[ INFO] 2020-07-26 10:40:11,375 connected to sClient
+[ INFO] 2020-07-26 10:40:11,392 received: set name: SFIX
+[ INFO] 2020-07-26 10:40:11,392 Response: SFIX
+[ INFO] 2020-07-26 10:40:13,711 received: in standby: null
+[ INFO] 2020-07-26 10:40:15,344 writing outline
+[ INFO] 2020-07-26 10:40:15,344 to client: printed: set startup
+[ INFO] 2020-07-26 10:40:15,344 waiting response
+[ INFO] 2020-07-26 10:40:15,356 Response: null
+[ INFO] 2020-07-26 10:40:17,870 received: not in standby: null
+[ INFO] 2020-07-26 10:40:38,566 received: in standby: null
+[ INFO] 2020-07-26 10:51:20,681 MasterNode started, waiting for clients...
+[DEBUG] 2020-07-26 10:51:21,159 Creating new client...
+[ INFO] 2020-07-26 10:51:21,166 Tring to connect to ClientNode 192.168.2.13
+[ INFO] 2020-07-26 10:51:21,166 writing outline
+[ INFO] 2020-07-26 10:51:21,167 to client: printed: get name
+[ INFO] 2020-07-26 10:51:21,167 waiting response
+[ INFO] 2020-07-26 10:51:21,174 connected to sClient
+[ INFO] 2020-07-26 10:51:21,194 Response: SFIX
+[ INFO] 2020-07-26 10:51:21,194 received: set name: SFIX
+[ INFO] 2020-07-26 10:51:24,208 writing outline
+[ INFO] 2020-07-26 10:51:24,209 to client: printed: set startup
+[ INFO] 2020-07-26 10:51:24,209 waiting response
+[ INFO] 2020-07-26 10:51:24,217 Response: null
+[ INFO] 2020-07-26 10:52:25,833 Lost connection to: 192.168.2.13
+[ INFO] 2020-07-26 10:52:25,833 closing client node...
+[DEBUG] 2020-07-26 10:52:25,834 closing server node...
+[ INFO] 2020-07-26 18:32:05,068 MasterNode started, waiting for clients...
+[DEBUG] 2020-07-26 18:32:10,785 Creating new client...
+[ INFO] 2020-07-26 18:32:10,791 Tring to connect to ClientNode 192.168.2.12
+[ INFO] 2020-07-26 18:32:10,791 writing outline
+[ INFO] 2020-07-26 18:32:10,792 to client: printed: get name
+[ INFO] 2020-07-26 18:32:10,793 waiting response
+[ INFO] 2020-07-26 18:32:10,798 connected to sClient
+[ INFO] 2020-07-26 18:32:10,811 Response: KEY118
+[ INFO] 2020-07-26 18:32:10,811 received: set name: KEY118
+[ INFO] 2020-07-26 18:32:17,093 writing outline
+[ INFO] 2020-07-26 18:32:17,093 to client: printed: set startup
+[ INFO] 2020-07-26 18:32:17,093 waiting response
+[ INFO] 2020-07-26 18:32:17,102 Response: null
+[ INFO] 2020-07-26 18:32:34,105 received: in standby: null
+[ INFO] 2020-07-26 18:32:35,252 received: not in standby: null
+[ INFO] 2020-07-26 18:34:25,714 received: in standby: null
+[ INFO] 2020-07-26 18:34:25,748 received: not in standby: null
+[ INFO] 2020-07-26 18:35:26,954 received: in standby: null
+[ INFO] 2020-07-26 18:35:31,876 received: not in standby: null
+[ INFO] 2020-07-26 18:35:54,711 received: in standby: null
+[ INFO] 2020-07-26 18:35:56,100 received: not in standby: null
+[ INFO] 2020-07-26 18:36:20,409 received: in standby: null
+[ INFO] 2020-07-26 18:36:21,284 received: not in standby: null
+[ INFO] 2020-07-26 18:36:35,049 received: in standby: null
+[ INFO] 2020-07-26 18:36:39,404 received: not in standby: null
+[ INFO] 2020-07-26 18:37:14,478 received: in standby: null
+[ INFO] 2020-07-26 18:37:23,252 received: not in standby: null
+[ INFO] 2020-07-26 18:38:07,782 received: in standby: null
+[ INFO] 2020-07-26 18:38:08,029 received: not in standby: null
+[ INFO] 2020-07-26 18:38:38,860 received: in standby: null
+[ INFO] 2020-07-26 18:38:40,357 received: not in standby: null
+[ INFO] 2020-07-26 18:38:45,536 received: in standby: null
+[ INFO] 2020-07-26 18:38:50,141 received: not in standby: null
+[ INFO] 2020-07-26 18:38:58,633 received: in standby: null
+[ INFO] 2020-07-26 18:39:01,085 received: not in standby: null
+[ INFO] 2020-07-26 18:39:11,860 received: in standby: null
+[ INFO] 2020-07-26 18:39:14,284 received: not in standby: null
+[ INFO] 2020-07-26 18:39:42,518 received: in standby: null
+[ INFO] 2020-07-26 18:39:46,172 received: not in standby: null
+[ INFO] 2020-07-26 18:39:58,314 received: in standby: null
+[ INFO] 2020-07-26 18:40:16,964 received: not in standby: null
+[ INFO] 2020-07-26 18:40:39,535 received: in standby: null
+[ INFO] 2020-07-26 18:40:41,037 received: not in standby: null
+[ INFO] 2020-07-26 18:41:09,562 Lost connection to: 192.168.2.12
+[ INFO] 2020-07-26 18:41:09,563 closing client node...
+[DEBUG] 2020-07-26 18:41:09,563 closing server node...
+[ INFO] 2020-07-26 18:42:56,046 MasterNode started, waiting for clients...
+[DEBUG] 2020-07-26 18:43:30,604 Creating new client...
+[ INFO] 2020-07-26 18:43:30,610 Tring to connect to ClientNode 192.168.2.15
+[ INFO] 2020-07-26 18:43:30,610 writing outline
+[ INFO] 2020-07-26 18:43:30,611 to client: printed: get name
+[ INFO] 2020-07-26 18:43:30,611 waiting response
+[ INFO] 2020-07-26 18:43:30,614 connected to sClient
+[ INFO] 2020-07-26 18:43:30,623 received: set name: SFIX
+[ INFO] 2020-07-26 18:43:30,623 Response: SFIX
+[ INFO] 2020-07-26 18:44:13,495 Lost connection to: 192.168.2.15
+[ INFO] 2020-07-26 18:44:13,496 closing client node...
+[DEBUG] 2020-07-26 18:44:13,496 closing server node...
+[DEBUG] 2020-07-26 18:44:18,011 Creating new client...
+[ INFO] 2020-07-26 18:44:18,012 Tring to connect to ClientNode 192.168.2.15
+[ INFO] 2020-07-26 18:44:18,012 writing outline
+[ INFO] 2020-07-26 18:44:18,013 to client: printed: get name
+[ INFO] 2020-07-26 18:44:18,014 connected to sClient
+[ INFO] 2020-07-26 18:44:18,014 waiting response
+[ INFO] 2020-07-26 18:44:18,067 Response: SFIX
+[ INFO] 2020-07-26 18:44:18,067 received: set name: SFIX
+[ INFO] 2020-07-26 18:44:23,657 received: in standby: null
+[ INFO] 2020-07-26 18:44:54,701 writing outline
+[ INFO] 2020-07-26 18:44:54,702 to client: printed: get name
+[ INFO] 2020-07-26 18:44:54,702 waiting response
+[ INFO] 2020-07-26 18:44:54,706 Response: SFIX
+[ INFO] 2020-07-26 18:44:54,706 received: set name: SFIX
+[ INFO] 2020-07-26 18:44:59,261 writing outline
+[ INFO] 2020-07-26 18:44:59,261 to client: printed: restart
+[ INFO] 2020-07-26 18:44:59,262 waiting response
+[ INFO] 2020-07-26 18:44:59,276 Response: null
+[ INFO] 2020-07-26 18:45:02,734 received: not in standby: null
+[ INFO] 2020-07-26 18:45:30,123 Lost connection to: 192.168.2.15
+[ INFO] 2020-07-26 18:45:30,123 closing client node...
+[DEBUG] 2020-07-26 18:45:30,123 closing server node...
+[DEBUG] 2020-07-26 18:48:07,146 Creating new client...
+[ INFO] 2020-07-26 18:48:07,150 Tring to connect to ClientNode 192.168.2.16
+[ INFO] 2020-07-26 18:48:07,151 writing outline
+[ INFO] 2020-07-26 18:48:07,152 to client: printed: get name
+[ INFO] 2020-07-26 18:48:07,152 connected to sClient
+[ INFO] 2020-07-26 18:48:07,152 waiting response
+[ INFO] 2020-07-26 18:48:07,199 received: set name: SFIX
+[ INFO] 2020-07-26 18:48:07,199 Response: SFIX
+[ INFO] 2020-07-26 18:48:12,854 received: in standby: null
+[ INFO] 2020-07-26 18:48:16,578 received: not in standby: null
+[ INFO] 2020-07-26 18:48:22,261 received: in standby: null
+[DEBUG] 2020-07-26 18:48:43,929 Creating new client...
+[ INFO] 2020-07-26 18:48:43,931 Tring to connect to ClientNode 192.168.2.12
+[ INFO] 2020-07-26 18:48:43,932 connected to sClient
+[ INFO] 2020-07-26 18:48:43,957 writing outline
+[ INFO] 2020-07-26 18:48:43,959 to client: printed: get name
+[ INFO] 2020-07-26 18:48:43,959 waiting response
+[ INFO] 2020-07-26 18:48:43,980 Response: KEY118
+[ INFO] 2020-07-26 18:48:43,979 received: set name: KEY118
+[ INFO] 2020-07-26 18:48:57,193 received: in standby: null
+[ INFO] 2020-07-26 18:48:59,815 received: not in standby: null
+[ INFO] 2020-07-26 18:49:26,110 received: not in standby: null
+[ INFO] 2020-07-26 18:49:26,404 writing outline
+[ INFO] 2020-07-26 18:49:26,404 to client: printed: restart
+[ INFO] 2020-07-26 18:49:26,404 waiting response
+[ INFO] 2020-07-26 18:49:31,402 received: in standby: null
+[ INFO] 2020-07-26 18:49:31,933 Response: null
+[ INFO] 2020-07-26 18:49:31,934 received: not in standby: null
+[ INFO] 2020-07-26 18:49:37,303 received: in standby: null
+[ INFO] 2020-07-26 18:49:43,349 Lost connection to: 192.168.2.12
+[ INFO] 2020-07-26 18:49:43,350 closing client node...
+[DEBUG] 2020-07-26 18:49:43,351 closing server node...
+[DEBUG] 2020-07-26 18:49:43,351 closing server node...
+[ INFO] 2020-07-26 18:49:44,662 received: not in standby: null
+[ INFO] 2020-07-26 18:49:44,663 closing client node...

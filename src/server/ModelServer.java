@@ -2,7 +2,6 @@ package server;
 
 import java.io.FileReader;
 import java.io.IOException;
-
 import org.apache.log4j.Logger;
 import controller.MainViewServerController;
 import javafx.collections.FXCollections;
@@ -13,7 +12,7 @@ import settings.Settings;
 public class ModelServer {
 	
 	//Utils:
-	public static final Logger log = Logger.getLogger(ModelServer.class.getName());
+	public static final Logger logger = Logger.getLogger(ModelServer.class.getName());
 	
 	//Settings:
 	private static Settings settings;
@@ -29,7 +28,7 @@ public class ModelServer {
 	public ModelServer(MainViewServerController _mvsController) throws IOException {
 		readSettings();
 		clientsList = FXCollections.observableArrayList();
-		masterNode=new MasterNode(this,masterServerNodePort, masterClentNodePort,log);
+		masterNode=new MasterNode(this,masterServerNodePort, masterClentNodePort,logger);
 		masterNode.start();
 	}
 
@@ -40,26 +39,24 @@ public class ModelServer {
 		try {
 			settings.load(new FileReader("properties/settings.cfg"));
 		} catch (IOException e) {
-			log.error(e);
+			logger.error(e);
 		}
 		
 		//Read settings:
 		masterServerNodePort = Integer.parseInt(settings.getProperty("masterServerNodePort"));
 		masterClentNodePort = Integer.parseInt(settings.getProperty("masterClentNodePort"));
 	}
-	
-	public void setController(MainViewServerController mainController) {
-		mvsController = mainController;
-
-	}
 
 	public void close() {
-//		for(Client c: clientsObservableList) {
-//			c.getsTh().close();
-//		}
 		masterNode.close();
 	}
 
+	//Setters:
+	public void setController(MainViewServerController mainController) {
+		mvsController = mainController;
+	}
+	
+	//Getters:
 	public MainViewServerController getMvsController() {
 		return mvsController;
 	}
@@ -70,6 +67,10 @@ public class ModelServer {
 
 	public ObservableList<Client> getClientObservableList() {
 		return clientsList;
+	}
+
+	public Logger getLogger() {
+		return ModelServer.logger;
 	}
 
 }

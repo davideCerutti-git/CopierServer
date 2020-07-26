@@ -1,17 +1,10 @@
 package master;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.Queue;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
-
 import org.apache.log4j.Logger;
-
-import javafx.application.Platform;
 import server.Client;
 import server.ModelServer;
 
@@ -20,20 +13,18 @@ public class MasterServerNode extends Thread {
 	private BufferedReader inStream = null;
 	private PrintWriter outStream = null;
 	private String outLine;
-	static private boolean runningThread = true;
+	private boolean runningThread = true;
 	private Logger logger;
-	private MasterClientNode clientNode;
 	private ModelServer model;
 	private Client client;
 
-	public MasterServerNode(Socket _socket, Logger _log, ModelServer _model, int _portClientNode, Client _client) {
-		runningThread = true;
+	public MasterServerNode(Socket _socket, Logger _logger, ModelServer _model, int _portClientNode, Client _client) {
+		this.runningThread = true;
 		this.client = _client;
-		client.getCommandsQueue().add("get name");
+		setupInitalCommands();
 		this.model = _model;
-		if(_socket==null)System.out.println("_socket = null");
 		this.socketServerNode = _socket;
-		this.logger = _log;
+		this.logger = _logger;
 		try {
 			this.inStream = new BufferedReader(new InputStreamReader(socketServerNode.getInputStream()));
 			this.outStream = new PrintWriter(socketServerNode.getOutputStream(), true);
@@ -42,12 +33,9 @@ public class MasterServerNode extends Thread {
 		}
 		client.setClientNode(new MasterClientNode(socketServerNode, model, logger, _portClientNode, client));
 		client.getClientNode().start();
-		
-		
 	}
 
 	public void run() {
-
 		while (runningThread) {
 			try {
 				// WRITE commands to Client
@@ -71,17 +59,13 @@ public class MasterServerNode extends Thread {
 		logger.debug("closing server node...");
 		client.closeClient();
 	}
+	
+	private void setupInitalCommands() {
+		client.getCommandsQueue().add("get name");
+	}
 
 	public void close() {
 		runningThread = false;
-	}
-
-	public Client getClient() {
-		return client;
-	}
-
-	public void setClient(Client client) {
-		this.client = client;
 	}
 
 }

@@ -8,6 +8,9 @@ import java.net.InetAddress;
 import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.ResourceBundle;
+
+import org.apache.log4j.Logger;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -20,6 +23,7 @@ import server.ModelServer;
 public class MainViewServerController implements Initializable {
 
 	private ModelServer model;
+	private Logger logger;
 
 	@FXML // fx:id="imageViewServer"
 	private ImageView imageViewServer; // Value injected by FXMLLoader
@@ -44,10 +48,7 @@ public class MainViewServerController implements Initializable {
 
 	@FXML // fx:id="listViewClients"
 	private ListView<Client> listViewClients; // Value injected by FXMLLoader
-	
-	
 
-	static private int indexClient=0;
 
 	@FXML // This method is called by the FXMLLoader when initialization is complete
 	void initialize() {
@@ -58,7 +59,7 @@ public class MainViewServerController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		listViewClients.setCellFactory(listViewClients -> new ListViewCellsClientController(model));
+		listViewClients.setCellFactory(listViewClients -> new ListViewCellsClientController(model, logger));
 		try {
 			labelNameServer.setText(InetAddress.getLocalHost().getHostName());
 		} catch (UnknownHostException e) {
@@ -71,10 +72,12 @@ public class MainViewServerController implements Initializable {
 		listViewClients.setItems(model.getClientObservableList());
 	}
 	
+	public void setLogger(Logger _logger) {
+		this.logger = _logger;
+	}
+	
 	public ListView<Client> getListViewClients() {
 		return listViewClients;
 	}
-	
-	
 
 }
