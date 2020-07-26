@@ -15,4 +15,6 @@ public class ClientInStandByCommand extends AbstractCommand {
 		client.getModel().getMvsController().getListViewClients().refresh();
 		return "executed: "+client.getClientName()+" -> in standby.";
 	}
+	
+	//TODO ragruppare con ClientNotInStandby
 }

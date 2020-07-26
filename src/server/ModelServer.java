@@ -31,8 +31,7 @@ public class ModelServer {
 		try {
 			masterNode = new MasterNode(this, masterServerNodePort, masterClentNodePort, logger);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e);
 		}
 		masterNode.start();
 	}

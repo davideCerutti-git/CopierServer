@@ -7,9 +7,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import org.apache.log4j.Logger;
-
 import command.AbstractCommand;
-import command.CommandInterface;
 import server.Client;
 import server.ModelServer;
 
