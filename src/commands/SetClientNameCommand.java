@@ -1,21 +1,18 @@
 package commands;
 
+import command.AbstractCommand;
 import server.Client;
 
-public class SetClientNameCommand implements Command {
-	
-	private Client client;
-	
+public class SetClientNameCommand extends AbstractCommand {
 	
 	public SetClientNameCommand(Client _client) {
-		super();
-		this.client = _client;
+		super(_client);
 	}
 	
 	@Override
 	public String execute(String args) {
 		client.setClientName(args);
-		return null;
+		return "executed: "+client.getClientName()+" -> name setted.";
 	}
 
 }

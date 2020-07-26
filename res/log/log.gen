@@ -1313,3 +1313,92 @@
 [DEBUG] 2020-07-26 18:49:43,351 closing server node...
 [ INFO] 2020-07-26 18:49:44,662 received: not in standby: null
 [ INFO] 2020-07-26 18:49:44,663 closing client node...
+[ INFO] 2020-07-26 20:02:30,957 MasterNode started, waiting for clients...
+[DEBUG] 2020-07-26 20:02:43,301 Creating new client...
+[ INFO] 2020-07-26 20:02:43,305 Tring to connect to ClientNode 192.168.2.12
+[ INFO] 2020-07-26 20:02:43,305 writing outline
+[ INFO] 2020-07-26 20:02:43,306 to client: printed: get name
+[ INFO] 2020-07-26 20:02:43,306 waiting response
+[ INFO] 2020-07-26 20:02:43,308 connected to sClient
+[ INFO] 2020-07-26 20:02:43,314 Response: KEY118
+[ INFO] 2020-07-26 20:02:43,314 received: set name: KEY118
+[ INFO] 2020-07-26 20:02:59,936 received: in standby: null
+[ INFO] 2020-07-26 20:03:02,087 received: not in standby: null
+[ INFO] 2020-07-26 20:39:11,890 MasterNode started, waiting for clients...
+[DEBUG] 2020-07-26 20:40:16,436 Creating new client...
+[ INFO] 2020-07-26 20:40:16,440 Tring to connect to ClientNode 192.168.2.17
+[ INFO] 2020-07-26 20:40:16,440 writing outline
+[ INFO] 2020-07-26 20:40:16,440 to client: printed: get name
+[ INFO] 2020-07-26 20:40:16,441 waiting response
+[ INFO] 2020-07-26 20:40:16,443 connected to sClient
+[ INFO] 2020-07-26 20:40:16,463 Response: KEY118
+[ INFO] 2020-07-26 20:40:16,463 received: set name: KEY118
+[ INFO] 2020-07-26 20:40:26,354 received: in standby: null
+[ INFO] 2020-07-26 20:40:28,546 received: not in standby: null
+[ INFO] 2020-07-26 20:42:09,402 received: in standby: null
+[ INFO] 2020-07-26 20:42:10,586 received: not in standby: null
+[ INFO] 2020-07-26 20:45:11,947 received: in standby: null
+[ INFO] 2020-07-26 20:45:14,266 received: not in standby: null
+[ INFO] 2020-07-26 20:46:22,056 received: in standby: null
+[ INFO] 2020-07-26 20:46:22,898 received: not in standby: null
+[ INFO] 2020-07-26 20:46:28,964 Lost connection to: 192.168.2.17
+[ INFO] 2020-07-26 20:46:28,965 closing client node...
+[DEBUG] 2020-07-26 20:46:28,965 closing server node...
+[ INFO] 2020-07-26 20:48:39,201 MasterNode started, waiting for clients...
+[DEBUG] 2020-07-26 20:48:41,537 Creating new client...
+[ INFO] 2020-07-26 20:48:41,541 Tring to connect to ClientNode 192.168.2.17
+[ INFO] 2020-07-26 20:48:41,541 writing outline
+[ INFO] 2020-07-26 20:48:41,541 to client: printed: get name
+[ INFO] 2020-07-26 20:48:41,541 waiting response
+[ INFO] 2020-07-26 20:48:41,544 connected to sClient
+[ INFO] 2020-07-26 20:48:41,551 Response: KEY118
+[ INFO] 2020-07-26 20:48:41,551 received: set name: KEY118
+[ INFO] 2020-07-26 20:48:58,136 received: in standby: null
+[ INFO] 2020-07-26 20:49:02,618 received: not in standby: null
+[ INFO] 2020-07-26 20:49:07,785 received: in standby: null
+[ INFO] 2020-07-26 20:49:11,202 received: not in standby: null
+[ INFO] 2020-07-26 20:49:20,525 received: in standby: null
+[ INFO] 2020-07-26 20:49:24,618 received: not in standby: null
+[ INFO] 2020-07-26 20:50:02,768 MasterNode started, waiting for clients...
+[DEBUG] 2020-07-26 20:50:04,548 Creating new client...
+[ INFO] 2020-07-26 20:50:04,552 Tring to connect to ClientNode 192.168.2.17
+[ INFO] 2020-07-26 20:50:04,552 writing outline
+[ INFO] 2020-07-26 20:50:04,552 to client: printed: get name
+[ INFO] 2020-07-26 20:50:04,553 waiting response
+[ INFO] 2020-07-26 20:50:04,555 connected to sClient
+[ INFO] 2020-07-26 20:50:04,572 received: set name: KEY118
+[ INFO] 2020-07-26 20:50:04,572 Response: KEY118
+[ INFO] 2020-07-26 20:50:11,874 received: in standby: null
+[ INFO] 2020-07-26 20:50:13,818 received: not in standby: null
+[ INFO] 2020-07-26 20:50:35,671 received: in standby: null
+[ INFO] 2020-07-26 20:50:36,530 received: not in standby: null
+[ INFO] 2020-07-26 21:08:30,628 MasterNode started, waiting for clients...
+[DEBUG] 2020-07-26 21:08:33,192 Creating new client...
+[ INFO] 2020-07-26 21:08:33,197 Tring to connect to ClientNode 192.168.2.17
+[ INFO] 2020-07-26 21:08:33,197 writing outline
+[ INFO] 2020-07-26 21:08:33,197 to client: printed: get name
+[ INFO] 2020-07-26 21:08:33,198 waiting response
+[ INFO] 2020-07-26 21:08:33,201 connected to sClient
+[ INFO] 2020-07-26 21:08:33,207 Response: KEY118
+[ INFO] 2020-07-26 21:08:33,207 received: set name: KEY118
+[ INFO] 2020-07-26 21:08:46,593 received: in standby: null
+[ INFO] 2020-07-26 21:08:48,010 received: not in standby: null
+[ INFO] 2020-07-26 21:10:38,042 Lost connection to: 192.168.2.17
+[ INFO] 2020-07-26 21:10:38,043 closing client node...
+[DEBUG] 2020-07-26 21:10:38,043 closing server node...
+[DEBUG] 2020-07-26 21:10:41,132 Creating new client...
+[ INFO] 2020-07-26 21:10:41,133 Tring to connect to ClientNode 192.168.2.17
+[ INFO] 2020-07-26 21:10:41,133 writing outline
+[ INFO] 2020-07-26 21:10:41,133 to client: printed: get name
+[ INFO] 2020-07-26 21:10:41,133 connected to sClient
+[ INFO] 2020-07-26 21:10:41,133 waiting response
+[ INFO] 2020-07-26 21:10:41,147 received: set name: KEY118
+[ INFO] 2020-07-26 21:10:41,147 Response: KEY118
+[ INFO] 2020-07-26 21:10:53,472 received: in standby: null
+[ INFO] 2020-07-26 21:10:55,363 received: not in standby: null
+[ INFO] 2020-07-26 21:11:01,577 received: in standby: null
+[ INFO] 2020-07-26 21:11:23,059 received: not in standby: null
+[ INFO] 2020-07-26 21:11:28,211 received: in standby: null
+[ INFO] 2020-07-26 21:11:29,218 received: not in standby: null
+[ INFO] 2020-07-26 21:11:43,391 received: in standby: null
+[ INFO] 2020-07-26 21:11:44,138 received: not in standby: null

@@ -1,6 +1,6 @@
-package commands;
+package command;
 
-public interface Command {
+public interface CommandInterface {
 	
     public abstract String execute (String args );
 }

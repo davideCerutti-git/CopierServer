@@ -8,7 +8,8 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import org.apache.log4j.Logger;
 
-import commands.Command;
+import command.AbstractCommand;
+import command.CommandInterface;
 import server.Client;
 import server.ModelServer;
 
@@ -69,7 +70,7 @@ public class MasterClientNode extends Thread {
 					logger.info("received: " + strLine);
 					String args=strLine.split(":")[1].trim();
 					String strCmd=strLine.split(":")[0].trim();
-					Command cmd = client.getCommandRegister().getCommandByName(strCmd);
+					AbstractCommand cmd = client.getCommandRegister().getCommandByName(strCmd);
 					outStream.write(cmd.execute(args) + "\n");
 					outStream.flush();
 				}

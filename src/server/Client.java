@@ -5,9 +5,10 @@ import java.util.Queue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import org.apache.log4j.Logger;
+
+import command.CommandRegister;
 import commands.ClientInStandByCommand;
 import commands.ClientNotInStandByCommand;
-import commands.CommandRegister;
 import commands.SetClientNameCommand;
 import javafx.application.Platform;
 import master.MasterClientNode;
