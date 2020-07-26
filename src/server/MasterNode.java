@@ -1,4 +1,4 @@
-package master;
+package server;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -6,16 +6,17 @@ import java.net.Socket;
 import java.util.concurrent.Semaphore;
 import org.apache.log4j.Logger;
 import javafx.application.Platform;
-import server.Client;
-import server.ModelServer;
 
 public class MasterNode extends Thread {
 
+	//Utils:
 	static boolean runningThread = true;
 	private ServerSocket masterServerSocket = null;
 	private Socket socket = null;
 	private int portClientNode;
 	private Logger logger;
+	
+	//Refs:
 	static private ModelServer model;
 
 	public MasterNode(ModelServer _model, int _port, int _portServerFrom, Logger _log) throws IOException {

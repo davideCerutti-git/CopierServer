@@ -34,7 +34,7 @@ public class Main extends Application {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainViewServer.fxml"));
 			Parent root = loader.load();
 			MainViewServerController mainController = (MainViewServerController) loader.getController();
-			modelServer = new ModelServer(mainController);
+			modelServer = ModelServer.getIstance(mainController);
 			mainController.setModel(modelServer);
 			mainController.setLogger(modelServer.getLogger());
 			modelServer.setController(mainController);

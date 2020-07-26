@@ -13,17 +13,23 @@ import server.Client;
 import server.ModelServer;
 
 public class MasterClientNode extends Thread {
-	protected Socket socketClientNode;
+
+	//Owns:
 	private BufferedReader inStream = null;
 	private PrintWriter outStream = null;
+	
+	//Utils:
+	private Socket socketClientNode;
 	private Logger logger;
 	private boolean runningThread = true, connectedToServer = false;
 	private String strLine;
-	@SuppressWarnings("unused")
-	private ModelServer model;
 	private String addressClientNode;
 	private int portClientNode;
+	
+	//Refs:
 	private Client client;
+	@SuppressWarnings("unused")
+	private ModelServer model;
 
 	public MasterClientNode(Socket _socketServerNode, ModelServer _model, Logger _logger, int _portClientNode, Client _client) {
 		this.runningThread = true;

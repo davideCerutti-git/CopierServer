@@ -15,18 +15,23 @@ import master.MasterServerNode;
 
 public class Client {
 
+	//Fields:
 	private String clientName;
 	private String clientStatus;
 	private String clientAddress;
 	private boolean inStandby;
 	private int clientStatusInteger;
-	private MasterServerNode sTh;
-	private BlockingQueue<String> commandsQueue;
-	private CommandRegister commandRegister;
+	
+	//Utils:
+	private Logger logger;
 	private ModelServer model;
+	
+	//Owns:
 	private MasterServerNode serverNode;
 	private MasterClientNode clientNode;
-	private Logger logger;
+	private BlockingQueue<String> commandsQueue;
+	private CommandRegister commandRegister;
+	
 
 
 	public Client(Socket _socket, ModelServer _model, Logger _logger,int _portClientNode) {
@@ -36,7 +41,7 @@ public class Client {
 		this.clientStatusInteger = 0;
 		this.logger=_logger;
 		this.model = _model;
-		this.commandsQueue = new LinkedBlockingQueue<>();
+		this.commandsQueue = new LinkedBlockingQueue<String>();
 		this.setUpCommands();
 		this.serverNode = new MasterServerNode(_socket, logger, model, _portClientNode,this);
 		this.serverNode.start();
@@ -118,10 +123,6 @@ public class Client {
 	
 	public int getClientStatusInteger() {
 		return clientStatusInteger;
-	}
-	
-	public MasterServerNode getsTh() {
-		return sTh;
 	}
 	
 	public Queue<String> getCommandsQueue() {

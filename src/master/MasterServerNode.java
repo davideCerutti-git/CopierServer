@@ -9,12 +9,18 @@ import server.Client;
 import server.ModelServer;
 
 public class MasterServerNode extends Thread {
-	protected Socket socketServerNode;
+	
+	//Owns:
 	private BufferedReader inStream = null;
 	private PrintWriter outStream = null;
+	
+	//Utils:
+	private Socket socketServerNode;
 	private String outLine;
 	private boolean runningThread = true;
 	private Logger logger;
+	
+	//Refs:
 	private ModelServer model;
 	private Client client;
 

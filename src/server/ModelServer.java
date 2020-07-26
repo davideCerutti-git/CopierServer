@@ -6,43 +6,54 @@ import org.apache.log4j.Logger;
 import controller.MainViewServerController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import master.MasterNode;
 import settings.Settings;
 
 public class ModelServer {
 	
-	//Utils:
+	//Singleton instance
+	private static ModelServer instance = null; // references to instance
+
+	// Utils:
 	public static final Logger logger = Logger.getLogger(ModelServer.class.getName());
-	
-	//Settings:
+
+	// Settings:
 	private static Settings settings;
 	private static int masterServerNodePort, masterClentNodePort;
-	
-	//Owns:
+
+	// Owns:
 	private static MasterNode masterNode;
 	private MainViewServerController mvsController;
 	private ObservableList<Client> clientsList;
 	
-	
-	
-	public ModelServer(MainViewServerController _mvsController) throws IOException {
+	private ModelServer(MainViewServerController _mvsController) { //Constructor
 		readSettings();
 		clientsList = FXCollections.observableArrayList();
-		masterNode=new MasterNode(this,masterServerNodePort, masterClentNodePort,logger);
+		try {
+			masterNode = new MasterNode(this, masterServerNodePort, masterClentNodePort, logger);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		masterNode.start();
 	}
 
+	public static ModelServer getIstance(MainViewServerController _mainController) {
+		if (instance == null)
+			instance = new ModelServer(_mainController);
+		return instance;
+	}
+
 	private void readSettings() {
-		
-		//Load settings:
+
+		// Load settings:
 		settings = new Settings();
 		try {
 			settings.load(new FileReader("properties/settings.cfg"));
 		} catch (IOException e) {
 			logger.error(e);
 		}
-		
-		//Read settings:
+
+		// Read settings:
 		masterServerNodePort = Integer.parseInt(settings.getProperty("masterServerNodePort"));
 		masterClentNodePort = Integer.parseInt(settings.getProperty("masterClentNodePort"));
 	}
@@ -51,16 +62,16 @@ public class ModelServer {
 		masterNode.close();
 	}
 
-	//Setters:
+	// Setters:
 	public void setController(MainViewServerController mainController) {
 		mvsController = mainController;
 	}
-	
-	//Getters:
+
+	// Getters:
 	public MainViewServerController getMvsController() {
 		return mvsController;
 	}
-	
+
 	public Settings getSettings() {
 		return settings;
 	}
