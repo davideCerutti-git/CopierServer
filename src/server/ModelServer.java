@@ -1,7 +1,19 @@
 package server;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.TimeZone;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import org.apache.log4j.Logger;
 import controller.MainViewServerController;
 import javafx.collections.FXCollections;
@@ -24,7 +36,8 @@ public class ModelServer {
 	private static MasterNode masterNode;
 	private MainViewServerController mvsController;
 	private ObservableList<Client> clientsList;
-	
+	static private List<Item> fileList = new ArrayList<>();
+
 	private ModelServer(MainViewServerController _mvsController) { //Constructor
 		readSettings();
 		clientsList = FXCollections.observableArrayList();
@@ -56,6 +69,33 @@ public class ModelServer {
 		masterServerNodePort = Integer.parseInt(settings.getProperty("masterServerNodePort"));
 		masterClentNodePort = Integer.parseInt(settings.getProperty("masterClentNodePort"));
 	}
+	
+	public void listFile() {
+        search(new File("C:/testCopier"));
+
+        for (Item s : fileList) {
+            System.out.println(s.toStringTest());
+        }
+	}
+	
+	public static void search(File folder) {
+        for (File f : folder.listFiles()) {
+            if (f.isDirectory()) {
+            	String[] dir=f.list();
+            	if(dir.length>0)
+            		search(f);
+            	else {
+            		fileList.add(new Item(f.getName(),f.getAbsolutePath(),LocalDateTime.ofInstant(Instant.ofEpochMilli(f.lastModified()), 
+                            TimeZone.getDefault().toZoneId()),false));
+            	}
+            }
+
+            if (f.isFile()) {
+            	fileList.add(new Item(f.getName(),f.getAbsolutePath(),LocalDateTime.ofInstant(Instant.ofEpochMilli(f.lastModified()), 
+                        TimeZone.getDefault().toZoneId()),true));
+            }
+        }
+    }
 
 	public void close() {
 		masterNode.close();
@@ -81,6 +121,10 @@ public class ModelServer {
 
 	public Logger getLogger() {
 		return ModelServer.logger;
+	}
+	
+	public static List<Item> getFileList() {
+		return fileList;
 	}
 
 }

@@ -4,10 +4,17 @@
 
 package controller;
 
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.URL;
 import java.net.UnknownHostException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.apache.log4j.Logger;
 
@@ -22,7 +29,7 @@ import server.ModelServer;
 
 public class MainViewServerController implements Initializable {
 
-	private ModelServer model;
+	private ModelServer modelServer;
 	private Logger logger;
 
 	@FXML // fx:id="imageViewServer"
@@ -49,7 +56,6 @@ public class MainViewServerController implements Initializable {
 	@FXML // fx:id="listViewClients"
 	private ListView<Client> listViewClients; // Value injected by FXMLLoader
 
-
 	@FXML // This method is called by the FXMLLoader when initialization is complete
 	void initialize() {
 		assert buttonSync != null : "fx:id=\"buttonSync\" was not injected: check your FXML file 'MainViewServer.fxml'.";
@@ -59,23 +65,27 @@ public class MainViewServerController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		listViewClients.setCellFactory(listViewClients -> new ListViewCellsClientController(model, logger));
+		listViewClients.setCellFactory(listViewClients -> new ListViewCellsClientController(modelServer, logger));
 		try {
 			labelNameServer.setText(InetAddress.getLocalHost().getHostName());
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}
+
+		buttonSync.setOnAction((event) -> {
+			modelServer.listFile();
+		});
 	}
-	
-	public void setModel(ModelServer modelServer) {
-		model = modelServer;
-		listViewClients.setItems(model.getClientObservableList());
+
+	public void setModel(ModelServer _modelServer) {
+		modelServer = _modelServer;
+		listViewClients.setItems(modelServer.getClientObservableList());
 	}
-	
+
 	public void setLogger(Logger _logger) {
 		this.logger = _logger;
 	}
-	
+
 	public ListView<Client> getListViewClients() {
 		return listViewClients;
 	}
