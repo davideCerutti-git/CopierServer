@@ -73,7 +73,13 @@ public class MainViewServerController implements Initializable {
 		}
 
 		buttonSync.setOnAction((event) -> {
-			modelServer.listFile();
+			try {
+				modelServer.listFile();
+			} catch (ClassNotFoundException e) {
+				logger.error(e);
+			} catch (IOException e) {
+				logger.error(e);
+			}
 		});
 	}
 
